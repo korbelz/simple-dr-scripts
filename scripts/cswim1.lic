@@ -1,0 +1,75 @@
+#Script to raise athletics skill
+#Start outside NE gate of the crossing
+#tries to climb all the spots on the wall then loops back to NE gate.
+#1 - 175 skill
+#
+i = matchtimeout 1, "mind lock"
+
+
+start_script("go2",[992])
+pause 90
+put "get clay from my back"
+pause 1
+until matchtimeout 1, "mind lock" do   
+	put "cl gate"
+	pause 12
+	put "stand"
+	pause 1
+	put "cl wall"
+	pause 12
+	put "stand"
+	pause 1
+	put "go foot"
+	pause 1
+	put "cl wall"
+	pause 12
+	put "stand"
+	pause 1
+	put "S"
+	pause 1
+	put "down"
+	pause 1
+	put "S"
+	pause 1
+	put "S"
+	pause 1
+	put "SW"
+	pause 1
+	put "cl wall"
+	pause 12
+	put "stand"
+	pause 1
+	put "S"
+	pause 1
+	put "cl wall"
+	pause 12
+	put "stand"
+	pause 1
+	put "S"
+	pause 1
+	put "cl gate"
+	pause 12
+	put "stand"
+	pause 1
+	put "cl wall"
+	pause 12
+	put "cl emb"
+	pause 12
+	put "stand"
+	pause 1
+	put "ret"
+	pause 1
+	put "ret"
+	pause 1
+	start_script("go2",[992])
+    pause 9
+	put "exp"
+	pause 2
+	echo i
+end
+put "put clay in my back"
+pause 1
+pause 2
+start_script("go2",[6212])
+pause 90
+start_script "cbuff1"

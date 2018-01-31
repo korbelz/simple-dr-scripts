@@ -1,6 +1,6 @@
  #formatting and everything else is a mess on the script 
   
-array = ["mpp 2", "maf 2", "ease"]
+array = ["bs 20", "ic 10", "mef 10"]
 x = 0 
 y = array.size
 echo y 
@@ -17,7 +17,7 @@ pause 2
 while x < y do
     put "prep " + array[x]
 	pause 2
-	put "charge my arm 2"
+	put "charge my arm 4"
 	pause 8
 	put "invoke my arm"
 	pause 16

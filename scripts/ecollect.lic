@@ -1,0 +1,19 @@
+#Script to rasie Perception and Outdoorsmanship
+#matchtimeout command is a Boolean flag looking for "mind lock" in the exp field. 
+#once mind locked script moves to mech.
+
+i = matchtimeout 1, "mind lock"
+
+until matchtimeout 1, "mind lock" do   
+	put "collect rock"
+    pause 16
+	put "kick rock"
+	pause 2
+	put "exp outdoors"
+	pause 1
+	echo i
+end
+pause 48
+start_script "emech"
+
+
