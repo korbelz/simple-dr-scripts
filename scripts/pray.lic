@@ -1,0 +1,45 @@
+#Theurgy script
+#upgrade this as I go
+#TODO preach test
+#TODO breaking bread test
+#TODO planting sirese seed
+#TODO almsbox testing
+#TODO clean altars
+#TODO Kiss altars
+#TODO Wine on altars
+#TODO meditate test
+#TODO Refill crossing temple bath
+#TODO Make offer blood script
+#TODO *** FIND MY ALTAR ***
+
+p = 0
+echo "praying time!"
+
+
+put "commune"
+pause 15
+put "pray asketi"
+pause 15
+put "commune sense"
+pause 30
+echo "*** 10 minutes till pray time ***"
+pause 60
+echo "*** 9 minutes till pray time ***"
+pause 60
+echo "*** 8 minutes till pray time ***"
+pause 60
+echo "*** 7 minutes till pray time ***"
+pause 60
+echo "*** 6 minutes till pray time ***"
+pause 60
+echo "*** 5 minutes till pray time ***"
+pause 60
+echo "*** 4 minutes till pray time ***"
+pause 60
+echo "*** 3 minutes till pray time ***"
+pause 60
+echo "*** 2 minutes till pray time ***"
+pause 60
+echo "*** 1 minutes till pray time ***"
+pause 90	
+start_script('pray', [p], force:true)

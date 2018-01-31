@@ -1,0 +1,17 @@
+#
+#
+
+i = matchtimeout 1, " just arrived"
+a = 0
+b = 0
+c = 0
+d = 0
+cycle = 0  
+
+until matchtimeout 1, " just arrived" do   
+	pause 60
+	echo i
+end
+
+start_script "touch"
+

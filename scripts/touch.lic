@@ -1,0 +1,43 @@
+  #comment here
+  #touch (user input)
+  #cycle heal on the name used in user input
+  
+#go to dokt, create array of players in the room
+  
+  start_script('go2',[6218])
+  pause 10
+	checkpcs
+	x = 0
+	echo checkpcs.last
+	pause 2
+    checkhealth
+#healing text goes here, cycle array x times.	
+ 
+	while checkhealth == 100
+		put "touch " + checkpcs.last
+		pause 2
+		put "take " + checkpcs.last + " all quick"
+		pause 20
+		put "pow"
+		pause 20
+		put "per health"
+		pause 20
+		put "accept"
+		put "accept tip"
+		put "per health self"
+		pause 20
+		checkhealth
+		pause 2
+		echo checkhealth
+		pause 2
+		break if checkhealth < 99
+		x += 1
+		checkpcs
+		echo checkpcs.last
+        pause 2		
+	end	
+	put "accept"
+	put "accept tip"
+	start_script('go2',[6212])
+	pause 20
+	start_script "healself"

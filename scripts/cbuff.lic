@@ -1,0 +1,46 @@
+  checkhealth
+	put "pow"
+	pause 10
+	put "app ring careful"
+	pause 17
+	put "app glov careful"
+	pause 17
+	put "rem arm"
+	pause 2
+	put "prep mpp 1"
+	pause 2
+	put "charge my arm 2"
+	pause 8
+	put "invoke my arm"
+	pause 16
+	put "cast"
+	pause 5 
+	#put "prep ic 5"
+	pause 2
+	#put "charge my arm 1"
+	pause 8
+	#put "invoke my arm"
+	pause 16
+	#put "cast"
+	pause 5 
+	#put "prep bs 5"
+	pause 2
+	#put "charge my arm 7"
+	pause 8
+	#put "invoke my arm"
+	pause 16
+	#put "cast"
+	pause 5
+	put "wear arm"
+	pause 2	
+	put "exp magic"
+	pause 2
+	put "pow"
+	pause 10
+	put "app ring careful"
+	pause 17
+	put "app glov careful"
+	pause 17
+	echo "waiting 60 seconds before buffing again"
+	pause 60
+	start_script('cbuff', [checkhealth], force:true)

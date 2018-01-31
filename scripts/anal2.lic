@@ -1,0 +1,26 @@
+#Script to train tactics, and stealth
+#
+#
+
+stop = matchtimeout 1, "massive opening"
+
+put "face other hog"
+pause 2
+until matchtimeout 1, "massive opening" do   
+	pause 5
+	put "anal"
+	pause 5
+	put "bob"
+	pause 5
+	put "weave"
+	pause 5
+	put "hi"
+	pause 7
+	put "stalk"
+	pause 6
+	put "exp"
+	pause 5
+	echo stop
+end
+pause 5
+start_script "anal"

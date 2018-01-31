@@ -1,0 +1,66 @@
+  #comment here
+  
+
+  
+  
+	array = ["chest", "right eye", "abdomen"]
+	x = 0
+	echo x
+	pause 5
+	
+ 
+	put "pow"
+	pause 10
+	put "per health"
+	pause 12
+	put "per health self"
+	pause 11
+	put "rem brac"
+	pause 2
+	while x < 3
+		put "prep hw 5"
+		pause 2
+		put "charge my brac 11"
+		pause 8
+		put "invoke my brac"
+		pause 15
+		put "cast " + array[x]
+		pause 2
+		x += 1	
+	end
+	echo "wounds done, next scars"
+	pause 5
+	
+	
+	
+	put "pow"
+	pause 10
+	put "per health"
+	pause 12
+	put "per health self"
+	pause 12
+	
+	y = 0
+	
+	#comment here
+	while y < 3 do
+		put "prep hs 5"
+		pause 2
+		put "charge my brac 11"
+		pause 5
+		put "invoke my brac"
+		pause 15
+		put "cast " + array[y]
+		pause 2 
+		y += 1
+	end
+	
+	echo "scars done"
+	put "wear brac"
+	pause 2
+	put "pow"
+	pause 10
+	put "per health"
+	pause 12
+	put "per health self"
+	pause 12
