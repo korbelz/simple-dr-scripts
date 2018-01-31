@@ -1,0 +1,44 @@
+#
+#
+#
+#testing arrays and modulos %; code works
+#array = ["one", "two", "three","four"]
+
+#x = 0
+#while x < 8
+#  echo array[x % 4]
+#  pause 2
+#  x += 1
+#end
+ 
+#testing using matchtimeout 1 as a boolean 
+#cut = matchtimeout 1, "The cutthroat gasps out"
+
+#until cut = false 
+#put "slice"
+#pause 10
+#end
+
+
+#testing taking multiple user input at once; code works
+# variable[1, 2]
+# puts "teach variable[1] to variable[2]" 
+# echo variable[1]
+# echo variable[2]
+
+#checkhealth
+#pause 2
+#echo checkhealth
+#pause 2
+
+#start_script('test', [checkhealth], force: true)
+
+#i = matchtimeout 1, "mind lock"
+#put "exp twohanded blunt"
+#pause 1
+#echo i 
+
+
+
+
+

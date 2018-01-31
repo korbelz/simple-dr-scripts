@@ -1,0 +1,22 @@
+#buy 6 ordinary lockpicks at crossing shop and put them on lockpick ring
+#
+#
+#change number after i to increase number of lockpicks to buy
+#must start at room 773, need to add a go2 at start to stop errors.
+x = 0
+multimove "w","w","w","w","w","w","n","n","go door"
+
+while x < 6
+  echo x
+  pause 1
+  put "buy o lockpick"
+  pause 1
+  put "offer 125"
+  pause 1
+  put "put lockpick on my lockpick ring"
+  pause 1 
+  x += 1
+ end
+ 
+ multimove "out","s","s","e","e","e","e","e"
+ echo "done buying picks masta"

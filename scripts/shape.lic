@@ -1,0 +1,51 @@
+#Currently setup to craft wood cloak pin #2- very Easy to 71 ranks
+#
+#
+# tools required: drawknife ; wood shaper ; rasp(?) ; stain(?) ; carving knife (?)
+
+#item variable is item you are crafting
+item = "pin"
+
+#goto is for debugging
+goto "carve"
+
+put "get shaping book"
+pause 2
+put "study my book"
+pause 17
+put "get lumber"
+pause 2
+put "put my book in my pack"
+pause 2 
+
+
+#shape label and loop
+shape:
+ 
+    echo "start wood shape"
+	put "get drawknife"
+	pause 2
+	put "scrape lumber with drawknife"
+	pause 25
+	put "put my drawknife in my pack"
+	pause 2
+
+
+#carve label and loop
+carve:
+until matchtimeout 1, "Applying the final touches"  
+    echo "start wood carve"
+	put "get carving knife"
+	pause 2
+	put "carve " + item +  " with knife"
+	pause 25
+	put "put my knife in my pack"
+	pause 2
+end 
+
+echo "final part of shape script"
+pause 1
+put "anal my pin"
+pause 5
+put "app my pin careful"
+pause 17

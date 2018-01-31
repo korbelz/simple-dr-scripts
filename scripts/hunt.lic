@@ -1,0 +1,68 @@
+#comment  
+#Script to kill things
+#hunt using claymore
+
+sea = %w[leucro bear sil thug ruff cut foot]
+loot = ["silver coin", "gold coin", "trunk", "chest", "cask", "strongbox", "box", "caddy"]
+dead = matchtimeout 1, "appears dead"
+exp = matchtimeout 1, "mind lock"
+
+put "put flail in my back"
+pause 2
+put "get clay from my back"
+pause 2
+put "rem hau"
+pause 6
+put "put hau in my back"
+pause 2
+put "get leathers from my back"
+pause 2
+put "wear leathers"
+pause 6
+
+#TEST matchtimeout 1, "appears dead"; code works
+until matchtimeout 1, "appears dead" do   
+	put "hunt"
+	pause 10
+	put "hi"
+	pause 7
+	put "stalk"
+	pause 6
+	put "weave"
+	pause 6
+	put "attack"
+    pause 9
+	put "look"
+	echo dead
+end
+put "get clay from my back"
+pause 2
+put "arr for skin"
+pause 3
+put "arr for skin"
+pause 3
+put "arr for skin"
+pause 3
+put "arr for skin"
+pause 3
+put "arr for skin"
+pause 3
+put "skin"
+pause 3
+#search and loot all possible enemies in this section using sea and loot array
+x = 0
+while x < 7
+  put "sea " + sea[x]
+  pause 1
+  x += 1
+end
+pause 1
+y = 0
+while y < 8
+  put "get " + loot[y]
+  put "stow " + loot[y]
+  pause 1
+  y += 1
+end
+#restart script using swim3 start_script set up. 
+start_script('hunt', [dead], force: true)

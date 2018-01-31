@@ -1,0 +1,422 @@
+# quiet
+=begin
+  Suggestions and contributions are welcome: https://github.com/rpherbig/dr-scripts
+
+  **********
+  For first time setup, see the Getting Started section of the repository README: https://github.com/rpherbig/dr-scripts/blob/master/README.md
+  **********
+
+  You'll want to remove any of our scripts that you replace with this from the auto start so they aren't getting run twice.
+
+  Useful helpers:
+  get_script('name')   #fetch the script and start tracking it
+  get_yaml('filename') #download the specified yaml file to your profiles directory
+  list_autostarts      #show all scripts that are started automatically
+  autostart(script)     #add a script to the autostart list
+  remove_autostart(script)    #remove a script from the autostart list
+  list_tracked_scripts
+=end
+
+require 'json'
+require 'net/http'
+require 'base64'
+require 'yaml'
+require 'ostruct'
+
+toggle_unique
+
+debug = variable.include?('debug')
+
+class OpenStruct
+  def new_ostruct_member(name)
+    name = name.to_sym
+    unless respond_to?(name)
+      define_singleton_method(name) { |*_a| @table[name] }
+      define_singleton_method("#{name}=") { |x| modifiable[name] = x }
+    end
+    name
+  end
+  protected :new_ostruct_member
+
+  def method_missing(mid, *args)
+    mname = mid.id2name
+    len = args.length
+    if mname.chomp!('=')
+      if len != 1
+        raise ArgumentError, "wrong number of arguments (#{len} for 1)", caller(1)
+      end
+      modifiable[new_ostruct_member(mname)] = args[0]
+    elsif len == 0
+      @table[mid]
+    elsif len == 1
+      echo("Failed to find yaml setting #{mid}, using default:#{args[0]}")
+      args[0]
+    else
+      raise NoMethodError, "undefined method `#{mid}' for #{self}", caller(1)
+    end
+  end
+end
+
+class ScriptManager
+  def initialize(debug)
+    @debug = debug
+    @git_token = '4491b4c6' + '20864db1575' + '3542a5d8729cf362acd1c'
+    @status_url = 'https://api.github.com/repos/rpherbig/dr-scripts/git/trees/master'
+    @item_url = 'https://api.github.com/repos/rpherbig/dr-scripts/git/blobs/'
+    UserVars.autostart_scripts ||= []
+    Settings['autostart'] ||= []
+    @developer = Settings['dependency-developer'] || false
+    @class_defs = { 'equipmanager' => :EquipmentManager, 'common' => :DRC }
+    @queue = []
+    @verify = []
+    @add_autos = []
+    @remove_autos = []
+    update_autostarts
+  end
+
+  def update_autostarts
+    @autostarts = UserVars.autostart_scripts + Settings['autostart']
+  end
+
+  def toggle_developer
+    @developer = !@developer
+  end
+
+  attr_reader :autostarts
+
+  def add_global_auto(script)
+    @add_autos << script
+  end
+
+  def remove_global_auto(script)
+    @remove_autos << script
+  end
+
+  def get_versions
+    if File.exist?('script_versions.dat')
+      Marshal.load(File.open('script_versions.dat', 'rb'))
+    else
+      {}
+    end
+  end
+
+  def set_version(filename, sha)
+    data = get_versions
+    data[filename] = sha
+    File.open('script_versions.dat', 'wb') { |file| Marshal.dump(data, file) }
+  end
+
+  def remove_script(filename)
+    data = get_versions
+    data.delete(filename)
+    File.open('script_versions.dat', 'wb') { |file| Marshal.dump(data, file) }
+  end
+
+  def queue_names_for_verify(script_names)
+    @verify = script_names
+  end
+
+  def queue_names(script_names)
+    @queue = script_names
+  end
+
+  def queue_empty?
+    @queue.empty?
+  end
+
+  def verify_done?
+    @verify.empty?
+  end
+
+  def autos_proccessed?
+    @add_autos.empty? && @remove_autos.empty?
+  end
+
+  def run_queue
+    load_script(@queue.shift) unless @queue.empty?
+    get_script(@verify.shift) unless @verify.empty?
+
+    Settings['dependency-developer'] = @developer
+    update = false
+
+    unless @add_autos.empty?
+      update = true
+      @add_autos.each { |script| Settings['autostart'] << script }
+      @add_autos = []
+    end
+    unless @remove_autos.empty?
+      update = true
+      @remove_autos.each { |script| Settings['autostart'].delete(script) }
+      @remove_autos = []
+    end
+    update_autostarts if update
+  end
+
+  def load_script(filename, force = false)
+    return if filename.nil? || filename.empty?
+    get_script(filename, force)
+    run_script(filename)
+  end
+
+  def get_script(filename, force = false)
+    filename = filename.dup
+    echo("checking:#{filename} force:#{force}") if @debug
+    download_script(filename) if get_versions[filename].nil? || force
+  end
+
+  def start_scripts(force = false)
+    get_versions.each { |name, _| get_script(name, force) }
+    autostarts.each { |name| run_script(name) }
+  end
+
+  def download_script(filename)
+    return if filename.nil? || filename.empty?
+    echo("downloading:#{filename}") if @debug
+    info = get_file_status(filename)
+    return unless info
+    if @developer
+      set_version(filename, info['sha'])
+      return
+    end
+    return if get_versions[filename] == info['sha']
+    echo("info:#{info}") if @debug
+    blob = make_request(info['url'])
+    File.open("./scripts/#{filename}", 'w') { |file| file.print(Base64.decode64(blob['content'])) }
+    set_version(filename, blob['sha'])
+  end
+
+  def setup_profiles
+    Dir.mkdir('./scripts/profiles') unless Dir.exist?('./scripts/profiles')
+    profile_tree_url = get_status['tree'].find { |element| element['path'] == 'profiles' }['url']
+    make_request(profile_tree_url)['tree'].each do |setup_file|
+      echo("downloading #{setup_file}") if @debug
+      blob = make_request(setup_file['url'])
+      File.open("./scripts/profiles/#{setup_file['path']}", 'w') { |file| file.print(Base64.decode64(blob['content'])) }
+    end
+  end
+
+  def get_yaml(filename)
+    profile_tree_url = get_status['tree'].find { |element| element['path'] == 'profiles' }['url']
+    setup_file = make_request(profile_tree_url)['tree'].find { |info| info['path'] =~ /#{filename}/i }
+    unless setup_file
+      echo("failed to find any files matching #{filename}")
+      return
+    end
+    echo("downloading #{setup_file['path']}")
+    blob = make_request(setup_file['url'])
+    File.open("./scripts/profiles/#{setup_file['path']}", 'w') { |file| file.print(Base64.decode64(blob['content'])) }
+  end
+
+  def run_script(filename)
+    filename.sub!(/\.lic$/, '')
+    return if Script.running?(filename) || (@class_defs[filename] && Scripting.constants.include?(@class_defs[filename]))
+    echo("refresh:#{filename}") if @debug
+    start_script(filename)
+  end
+
+  def file_outdated?(filename)
+    echo("file_outdated?:#{filename}") if @debug
+    local_version = get_versions[filename]
+    echo("local:#{local_version}") if @debug
+    info = get_file_status(filename)
+    unless info
+      echo("file not found in repository: #{filename}")
+      return false
+    end
+    echo("remote:#{info['sha']}") if @debug
+    info['sha'] != local_version
+  end
+
+  def get_file_status(filename)
+    get_status['tree'].find { |element| element['path'] == filename }
+  end
+
+  def get_status
+    return @status if @status && Time.now - @status_time <= 30 # prevent flooding
+    @status_time = Time.now
+    @status = make_request(@status_url)
+  end
+
+  def make_request(raw_uri)
+    uri = URI.parse(raw_uri)
+    args = { access_token: @git_token }
+    uri.query = URI.encode_www_form(args)
+    http = Net::HTTP.new(uri.host, uri.port)
+    http.use_ssl = true
+    http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+
+    request = Net::HTTP::Get.new(uri.request_uri)
+
+    response = http.request(request)
+    JSON.parse(response.body)
+  end
+end
+
+class SetupFiles
+  def initialize(debug)
+    @debug = debug
+    @load = true
+    @latest = false
+    @settings = {}
+    @extras = []
+  end
+
+  def request_settings(options)
+    @load = true
+    @extras = options
+  end
+
+  def loaded?
+    !@load
+  end
+
+  def run_queue
+    load_settings if @load
+  end
+
+  attr_reader :settings
+
+  def load_settings
+    profile = "./scripts/profiles/#{checkname}-setup.yaml"
+    if File.exist?(profile)
+      settings = YAML.load_file('./scripts/profiles/base.yaml')
+      settings.merge!(YAML.load_file(profile))
+      @extras.each do |subfile|
+        filepath = "./scripts/profiles/#{checkname}-#{subfile}.yaml"
+        basepath = "./scripts/profiles/base-#{subfile}.yaml"
+        if File.exist?(filepath)
+          settings.merge!(YAML.load_file(filepath))
+        elsif File.exist?(basepath)
+          settings.merge!(YAML.load_file(basepath))
+        else
+          echo("Tried to request setting file that doesn't exist #{subfile}")
+        end
+      end
+    end
+    @settings = OpenStruct.new(settings)
+    @load = false
+  end
+end
+
+$setupfiles = SetupFiles.new(debug)
+$manager = ScriptManager.new(debug)
+
+def get_settings(options = [])
+  $setupfiles.request_settings(options)
+  pause 0.1 until $setupfiles.loaded?
+  $setupfiles.settings
+end
+
+def format_name(name)
+  name =~ /\.lic$/ ? name : "#{name}.lic"
+end
+
+def format_yaml_name(name)
+  name =~ /\.yaml$/ ? name : "#{name}.yaml"
+end
+
+def custom_require(script_names)
+  script_names = [script_names] unless script_names.is_a?(Array)
+  script_names.map!(&method(:format_name))
+  $manager.queue_names(script_names)
+  pause 0.1 until $manager.queue_empty?
+end
+
+def verify_script(script_names)
+  script_names = [script_names] unless script_names.is_a?(Array)
+  script_names.map!(&method(:format_name))
+  $manager.queue_names_for_verify(script_names)
+  pause 0.1 until $manager.verify_done?
+end
+
+def get_script(script_name)
+  $manager.get_script(format_name(script_name), true)
+end
+
+def force_refresh_scripts
+  $manager.start_scripts
+end
+
+def stop_updating_script(filename)
+  $manager.remove_script(format_name(filename))
+end
+
+def list_tracked_scripts
+  $manager.get_versions.sort
+end
+
+def download_once(filename)
+  name = format_name(filename)
+  custom_require([name])
+  stop_updating_script(name)
+end
+
+def migrate_scripts
+  remove_from_autostart(managed_scripts)
+  add_self_to_autostart
+  managed_scripts.each(&method(:get_script))
+end
+
+def managed_scripts
+  repo_scripts = $manager.get_status['tree'].map { |element| element['path'] }.select { |file| file.include?('.lic') && !file.include?('-setup') }
+  local_scripts = Dir['./scripts/*.lic'].map { |item| File.basename(item) }
+  repo_scripts & local_scripts
+end
+
+def list_autostarts
+  $manager.autostarts
+end
+
+def autostart(script_names, global = true)
+  script_names = [script_names] unless script_names.is_a?(Array)
+  script_names.map!(&method(:format_name))
+  if global
+    script_names.each { |script| $manager.add_global_auto(script) }
+  else
+    script_names.each { |script| UserVars.autostart_scripts.push(script) unless UserVars.autostart_scripts.include?(script) }
+  end
+  script_names.each { |script| $manager.run_script(script) }
+end
+
+def stop_autostart(script)
+  script = format_name(script)
+  if UserVars.autostart_scripts.include?(script)
+    UserVars.autostart_scripts.delete(script)
+  else
+    $manager.remove_global_auto(script)
+  end
+end
+
+def toggle_developer_mode
+  $manager.toggle_developer
+end
+
+def setup_profiles
+  $manager.setup_profiles
+end
+
+def get_yaml(filename)
+  $manager.get_yaml(format_yaml_name(filename))
+end
+
+def remove_from_autostart(scripts)
+  scripts.each do |script|
+    start_script('autostart', ['remove', '--global', File.basename(script, '.*')])
+    pause 0.1 while Script.running?('autostart')
+    start_script('autostart', ['remove', File.basename(script, '.*')])
+    pause 0.1 while Script.running?('autostart')
+  end
+end
+
+def add_self_to_autostart
+  start_script('autostart', ['add', '--global', File.basename('dependency', '.*')])
+  pause 0.1 while Script.running?('autostart')
+end
+
+$manager.start_scripts(true)
+
+loop do
+  $manager.run_queue
+  $setupfiles.run_queue
+  pause 0.1
+end

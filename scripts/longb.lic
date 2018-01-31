@@ -1,0 +1,113 @@
+# Comments
+#comment  
+#Script to kill things
+#matchtimeout command is a Boolean flag looking for "dead string" in the exp field. 
+# dead is death string; $a is "noun" of critter you are currently hunting, comment out all but one.
+# A silver-backed bear growls one last time and collapses.
+# A young ogre howls in pain, then pitches forward onto its face and goes still.
+# A blood wolf whines briefly before closing its eyes forever.
+# A dire bear growls one last time and collapses.
+# A giant black leucro collapses to the ground, yelping like a lost puppy calling for its mother until finally it ceases all movement.
+
+
+sea = %w[leucro bear sil thug ruff cut foot]
+loot = ["silver coin", "gold coin", "trunk", "chest", "cask", "strongbox", "box", "caddy"]
+dead = matchtimeout 1, "appears dead"
+exp = matchtimeout 1, "mind lock"
+arr = matchtimeout 1, "arrow"
+
+x = 0 
+
+put "put clay in my back"
+pause 2
+put "put flail in my back"
+pause 2
+put "rem longb"
+pause 2
+put "prep stw 20"
+pause 20
+put "cast"
+pause 2
+until matchtimeout 1, "appears dead" do 
+	put "hunt"
+	pause 10
+	put "load my longb"
+	pause 8
+	put "ret"
+	pause 3
+	put "ret"
+	pause 3
+	put "aim"
+	pause 7
+	put "hi"
+	pause 7
+	put "fire"
+	pause 2
+	put "ret"
+	pause 3
+	put "ret"
+	pause 3
+	put "get arrow"
+	pause 1
+	pause 1
+	put "put my arrow in qui"
+	pause 1
+	put "hi"
+	pause 7
+	put "stalk"
+	pause 6
+	put "look"
+	pause 1
+	echo dead
+end
+put "wear Longb"
+pause 2
+put "get clay from my back"
+pause 2
+put "arr for skin"
+pause 3
+put "arr for skin"
+pause 3
+put "arr for skin"
+pause 3
+put "arr for skin"
+pause 3
+put "arr for skin"
+pause 3
+put "skin"
+pause 3
+#search and loot all possible enemies in this section using sea and loot array
+a = 0
+while a < 6
+  put "sea " + sea[a]
+  pause 1
+  a += 1
+end
+pause 1
+y = 0
+while y < 8
+  put "get " + loot[y]
+  put "stow " + loot[y]
+  pause 1
+  y += 1
+end
+b = 0
+put "look"
+pause 2
+echo arr
+pause 1
+while b < 7 
+	put "get c arrow"
+    pause 1
+    put "put c arrow in my qui"
+    pause 1
+	b += 1
+end
+pause 1
+put "exp bow"
+i = matchtimeout 1, "nearly locked"
+pause 1
+start_script "blunt4"
+		
+
+

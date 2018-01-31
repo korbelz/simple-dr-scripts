@@ -1,0 +1,85 @@
+#move hunting area to leather rep guy and sell bundle
+#TODO: 
+#
+
+put "put clay in my back"
+pause 1
+start_script("go2",[1539])
+pause 60
+put "go build"
+pause 1
+put "get pelt"
+pause 1
+put "put pelt in my back"
+pause 1
+put "rem bun"
+pause 1
+put "sell bun"
+pause 1
+put "get pelt from my back"
+pause 1
+put "bun"
+pause 1
+put "wear bun"
+pause 1
+put "e"
+pause 1
+put "rem tar"
+pause 1
+put "give tar to rand"
+pause 1
+put "give tar to rand"
+pause 1
+put "put ticket in my back"
+pause 1
+put "rem cowl"
+pause 1
+put "give cowl to rand"
+pause 1
+put "give cowl to rand"
+pause 1
+put "put ticket in my back"
+pause 1
+put "rem glove"
+pause 1
+put "give glove to rand"
+pause 1
+put "give glove to rand"
+pause 1
+put "put ticket in my back"
+pause 1
+put "rem leathers"
+pause 1
+put "give leathers to rand"
+pause 1
+put "give leathers to rand"
+pause 1
+pause 200
+put "give ticket to rand"
+pause 1
+put "wear leathers"
+pause 1
+put "get ticket from my back"
+pause 1
+put "give ticket to rand"
+pause 1
+put "wear glove"
+pause 1
+put "get ticket from my back"
+pause 1
+put "give ticket to rand"
+pause 1
+put "wear cowl"
+pause 1
+put "get ticket from my back"
+pause 1
+put "give ticket to rand"
+pause 1
+put "wear tar"
+pause 1
+put "w"
+pause 1 
+start_script("go2",[6212])
+
+
+	

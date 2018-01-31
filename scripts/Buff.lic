@@ -1,0 +1,79 @@
+#pre combat buffs
+# manually run this before combat
+# needs an array for 'buff' spells and loop casting.
+  
+	put "pow"
+	pause 10
+	put "app bun careful"
+	pause 17
+	put "app tar careful"
+	pause 17
+	put "rem arm"
+	pause 2
+	put "prep ey 5"
+	pause 2
+	put "charge my arm 10"
+	pause 8
+	put "invoke my arm"
+	pause 15
+	put "cast"
+	pause 5 
+	put "prep inst 10"
+	pause 2
+	put "charge my arm 20"
+	pause 8
+	put "invoke my arm"
+	pause 15
+	put "cast"
+	pause 5 
+	put "prep sott 10"
+	pause 2
+	put "charge my arm 20"
+	pause 8
+	put "invoke my arm"
+	pause 15
+	put "cast"
+	pause 5
+	put "prep stw 10"
+	pause 2
+	put "charge my arm 20"
+	pause 8
+	put "invoke my arm"
+	pause 15
+	put "cast"
+	pause 2
+	put "prep hol 13"
+	pause 2
+	put "charge my arm 12"
+	pause 8
+	put "invoke my arm"
+	pause 15
+	put "cast"
+	pause 5
+	put "prep maf 1"
+	pause 2
+	put "charge my arm 12"
+	pause 8
+	put "invoke my arm"
+	pause 15
+	put "cast"
+	pause 5
+	put "prep em 10"
+	pause 2
+	put "charge my arm 12"
+	pause 8
+	put "invoke my arm"
+	pause 15
+	put "cast"
+	pause 5 
+    put "wear arm"
+	pause 2	
+	put "exp magic"
+	pause 2
+	put "pow"
+	pause 10
+	put "app bun careful"
+	pause 17
+	put "app tar careful"
+	pause 17
+	

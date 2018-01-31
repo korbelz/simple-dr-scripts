@@ -1,0 +1,23 @@
+#comments here
+# This script will raise Appraisal skill
+# This script does not loop :0
+# This script need an array of gear and loop 
+#
+put "app longb careful"
+pause 17
+put "app clay careful"
+pause 17
+put "app bun careful"
+pause 17
+put "app glo careful"
+pause 17
+put "app bala careful"
+pause 17
+put "app leathers careful"
+pause 17
+#put "app gre careful"
+#pause 17
+put "app targ careful"
+pause 17
+start_script "buff"
+

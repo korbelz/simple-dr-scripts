@@ -1,0 +1,68 @@
+# This script needs serious work 
+#
+# Tools required: Hatchet ; saw ; drawknife
+
+#wood var is what wood you want to "refining"
+wood = "branch"
+echo wood
+pause 2
+
+#goto label for debugging
+#goto "refine"
+
+echo "start lumber"
+pause 1
+put "get hatchet"
+pause 1
+put "watch forest"
+pause 11
+
+#chop goto label and loop
+chop:
+until matchtimeout 1, "text that will end this loop goes here"  
+    echo "start wood chop"
+	put "chop tree"
+	pause 16
+	put "chop tree"
+	pause 16
+	put "watch forest danger"
+	pause 6
+end
+
+#TODO material storage goes here
+
+
+#Refine label and loop
+refine:
+echo "start refine wood"
+pause 1
+put "put my hatchet in my pack"
+pause 1
+put "get saw"
+pause 1
+put "get " + wood
+pause 1
+put "cut my " + wood + " with my saw"
+pause 17
+put "cut my " + wood + " with my saw"
+pause 17
+put "cut my " + wood + " with my saw"
+pause 17
+put "put my saw in my pack"
+pause 1
+put "get drawknife"
+pause 1
+put "scrape my " + wood + " with my drawknife"
+pause 17 
+put "scrape my " + wood + " with my drawknife"
+pause 17 
+put "scrape my " + wood + " with my drawknife"
+pause 17 
+put "put drawknife in my pack"
+pause 1
+put "app lumber careful"
+pause 17
+echo "refine end"
+
+
+#TODO lumber stuff here

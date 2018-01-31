@@ -1,0 +1,85 @@
+#comment
+put "title list blunt"
+pause 2
+put "title list ranged"
+pause 2
+put "title list brawling"
+pause 2
+put "title list GenEdged"
+pause 2
+put "title list SpecEdged"
+pause 2
+put "title list Thrown"
+pause 2
+put "title list Pole"
+pause 2
+put "title list Shield"
+pause 2
+put "title list Slings"
+pause 2
+put "title list weapons"
+pause 2
+put "title list weaponmaster"
+pause 2
+put "title list performer"
+pause 2
+put "title list primarymagic"
+pause 2
+put "title list magic"
+pause 2
+put "title list Money"
+pause 2
+put "title list Ownership"
+pause 2
+put "title list Survival1"
+pause 2
+put "title list Survival2"
+pause 2
+put "title list Survival3"
+pause 2
+put "title list Lore"
+pause 2
+put "title list criminal"
+pause 2
+put "title list generic"
+pause 2
+put "title list Racial"
+pause 2
+put "title list Premium"
+pause 2
+put "title list order"
+pause 2
+put "title list religion"
+pause 2
+put "title list Novice"
+pause 2
+put "title list practitioner"
+pause 2
+put "title list dilattente"
+pause 2
+put "title list aficionado"
+pause 2
+put "title list adept"
+pause 2
+put "title list expert"
+pause 2
+put "title list professional"
+pause 2
+put "title list authority"
+pause 2
+put "title list Genius"
+pause 2
+put "title list Savant"
+pause 2
+put "title list Master"
+pause 2
+put "title list Grandmaster"
+pause 2
+put "title list Guru"
+pause 2
+put "title list Legend"
+pause 2
+put "title list Ranger"
+pause 2
+put "title list Custom"
+pause 2

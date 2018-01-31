@@ -1,0 +1,17 @@
+#mana wasteful way of healing
+#body part array list
+# v0.0 
+body = ["skin", "chest", "head", "left eye", "right eye", "neck", "abdomen", "back", "left arm", "right arm", "left leg", "right leg"]
+
+checkhealth
+if checkhealth < 99
+#checkpoison 
+#if poison do stuff here
+
+#checkdisease
+#if disease do stuff here
+
+#put "health"
+#get body part array here(hard part)
+#use body part array vs "body" array
+#cast healing on areas that match both arrays

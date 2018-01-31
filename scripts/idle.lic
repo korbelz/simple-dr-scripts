@@ -1,0 +1,11 @@
+# background loops that should be added to auto start in lich in case you go afk for a few minutes.
+
+
+i = matchtimeout 1, "vimforever"
+
+until matchtimeout 1, "vimforever" do   
+	waitfor("YOU HAVE BEEN IDLE TOO LONG. PLEASE RESPOND.")
+	put "exp"
+	pause 180
+	echo i
+end

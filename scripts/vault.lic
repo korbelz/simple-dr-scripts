@@ -1,0 +1,67 @@
+#go look in vault, pause for 180 seconds to let player do stuff and leave
+#starts with trip to gem shop, then vault 
+#
+#array of gem names currently 39 items, didn't know about %w when I build this array, need to fix
+array = ["chrysoberyl", "spinel", "zircon","sunstone","chrysoprase","crystal","topaz","iolite","aquamarine","kunzite","opal","beryl","onyx","chalcedony","alexandrite","star-stone","diamond","ruby","sapphire","jade","quartz","citrine","tourmaline","morganite","moonstone","diopside","tsavorite","amethyst","lapis lazuli","coral","turquoise","andalusite","carnelian","garnet","ivory","tanzanite","agate","emerald","peridot"]
+#x is used to increment the gem array
+x = 0
+put "n"
+pause 1
+put "e"
+pause 1
+put "e"
+pause 1
+put "go shop"
+pause 1
+put "go room"
+pause 1
+
+while x < 39
+  put "get " + array[x] + " from my pouch"
+  pause 1
+  put "sell " + array[x] 
+  pause 1
+  x += 1
+ end
+ 
+put "out"
+pause 1
+put "out"
+pause 1
+put "w"
+pause 1
+put "w"
+pause 1
+put "s"
+pause 1
+put "go squ"
+pause 1
+put "go door"
+pause 1
+put "go other arch"
+pause 1 
+put "pull lever"
+pause 1
+put "go door"
+pause 1
+put "open vault"
+pause 1
+put "look in vault"
+put "look in my back"
+pause 60 
+put "look in vault"
+put "look in my back"
+pause 60
+put "look in vault"
+put "look in my back"
+pause 60
+put "close vault"
+pause 1
+put "go door"
+pause 1
+put "go arch"
+pause 1
+put "out"
+pause 1
+put "out"
+pause 1

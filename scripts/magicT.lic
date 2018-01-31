@@ -1,0 +1,65 @@
+# Script to train life magic, attunement, arcana, augmentation, utility, warding.
+# Once utility is mind locked this script will move on to collect script.
+# Needs an array of spells to cast for training and better loop.
+
+i = matchtimeout 1, "mind lock"
+
+until matchtimeout 1, "mind lock" do   
+	put "pow"
+	pause 10
+	put "rem arm"
+	pause 2
+	put "prep ey 7"
+	pause 2
+	put "charge my arm 7"
+	pause 5
+	put "invoke my arm"
+	pause 15
+	put "cast"
+	pause 5 
+	put "prep inst 19"
+	pause 2
+	put "charge my arm 7"
+	pause 5
+	put "invoke my arm"
+	pause 15
+	put "cast"
+	pause 5 
+	put "prep sott 19"
+	pause 20
+	put "cast"
+	pause 5
+	put "prep stw 19"
+	pause 2
+	put "charge my arm 7"
+	pause 5
+	put "invoke my arm"
+	pause 15
+	put "cast"
+	pause 2
+	put "prep hol 19"
+	pause 2
+	put "charge my arm 7"
+	pause 5
+	put "invoke my arm"
+	pause 15
+	put "cast"
+	pause 5
+	put "prep em 14"
+	pause 2
+	put "charge my arm 7"
+	pause 5
+	put "invoke my arm"
+	pause 15
+	put "cast"
+	pause 5
+	put "wear arm"
+	pause 2	
+	put "exp utility"
+	pause 2
+	put "pow"
+	pause 60
+	echo i
+end
+pause 120
+start_script "collect"

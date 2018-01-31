@@ -1,0 +1,42 @@
+#Trains mech lore
+#moves to swim3 script when done.
+
+i = 0
+a = 0
+b = 0
+   
+while i < 3 
+	put "for vine"
+	pause 5
+	while a < 16
+	  put "braid my vine"
+	  pause 12
+	  echo "a "
+	  echo a
+	  a += 1
+	end
+	put "for vine"
+	pause 5
+	while b < 16
+	  put "braid my vine"
+	  pause 12
+	  echo "b "
+	  echo b
+	  b += 1
+	end
+	put "drop my vine"
+	put "drop my vine"
+	pause 5
+	pause 1
+	echo i
+    put "prep comp 20"
+    pause 20
+    put "cast"
+    pause 4
+    put "exp mech"
+    pause 2
+	i += 1
+end	
+
+start_script "swim3" 
+    

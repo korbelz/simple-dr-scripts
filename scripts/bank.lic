@@ -1,0 +1,78 @@
+#rep metal stuff, then drop off money at the bank
+# need to add a 'go2' at start so you dont need to manually move to room 733
+# need to add an array for metal gear that needs to be repaired + loop
+#
+
+x = 0
+multimove "se","go bank","go booth"
+put "exch all l to k"
+pause 1
+put "exch all d to k"
+pause 1
+put "out"
+pause 1
+put "go win"
+pause 1
+put "dep all"
+pause 10
+put "bal"
+pause 10
+put "withdraw 4 gold k"
+pause 2
+multimove "out","out","nw"
+echo "done with the bank"
+
+multimove "se","e","e","go forge"
+put "get clay from my back"
+pause 1
+put "give clay to cat"
+pause 1
+put "give clay to cat"
+pause 2
+put "get flail from my back"
+pause 1
+put "give flail to cat"
+pause 1
+put "give flail to cat"
+pause 2
+put "put tick in my back"
+pause 2
+put "get hau from my back"
+pause 2
+put "give hau to cat"
+pause 2
+put "give hau to cat"
+pause 2
+put "hide"
+pause 200
+put "give tick to cat"
+pause 2
+put "put hau in my back"
+pause 2
+put "get tick from my back"
+pause 2
+put "give tick to cat"
+pause 2
+put "put clay in my back"
+pause 2
+put "put flail in my back"
+pause 2
+put "get tick from my back"
+pause 2
+put "give tick to cat"
+pause 2
+put "put clay in my back"
+pause 2
+put "put flail in my back"
+pause 2
+put "get tick from my back"
+pause 2
+put "give tick to cat"
+pause 2
+put "put hau in my back"
+pause 2
+put "put clay in my back"
+pause 2
+put "put flail in my back"
+pause 2
+multimove "out","w","w","nw"

@@ -1,0 +1,106 @@
+#comment arrow making
+# Old school script
+# 
+
+put "get shaping book"
+pause 1
+put "study book"
+pause 22
+put "put book in my pack"
+pause 2
+put "get shaper"
+pause 2
+put "get shafts"
+pause 2
+put "shape my shafts with shaper"
+pause 22
+put "put shaper in my pack"
+pause 2
+put "get c arrowhead from my pack"
+pause 2
+put "assemble my arrowheads with my arrows"
+pause 22
+put "get glue"
+pause 2
+put "apply glue to my arrows"
+pause 22
+put "put glue in my pack"
+pause 2
+put "get knife"
+pause 2
+put "carve my arrows with my knife"
+pause 22
+put "put knife in my pack"
+pause 2
+put "get shaper"
+pause 2
+put "shape my arrows with my shaper"
+pause 22
+put "put my shaper in pack"
+pause 2
+put "get knife"
+pause 2
+put "carve my arrows with my knife"
+pause 22
+put "put knife in my pack"
+pause 2
+put "get shaper"
+pause 2
+put "shape my arrows with my shaper"
+pause 22
+put "put my shaper in pack"
+pause 2
+put "get knife"
+pause 2
+put "carve my arrows with my knife"
+pause 22
+put "put knife in my pack"
+pause 2
+put "get shaper"
+pause 2
+put "shape my arrows with my shaper"
+pause 22
+put "put my shaper in pack"
+pause 2
+put "get knife"
+pause 2
+put "carve my arrows with my knife"
+pause 22
+put "put knife in my pack"
+pause 2
+put "get shaper"
+pause 2
+put "shape my arrows with my shaper"
+pause 22
+put "put my shaper in pack"
+pause 2
+put "get knife"
+pause 2
+put "carve my arrows with my knife"
+pause 22
+put "put knife in my pack"
+pause 2
+put "get shaper"
+pause 2
+put "shape my arrows with my shaper"
+pause 22
+put "put my shaper in pack"
+pause 2
+put "get flights"
+pause 2
+put "assemble my flights with my arrows"
+pause 2
+put "get glue"
+pause 2
+put "apply glue to my arrows"
+pause 22
+put "put glue in my pack"
+pause 2
+put "get knife"
+pause 2
+put "carve my arrows with my knife"
+pause 22
+put "put knife in pack"
+pause 2
+put "app my arrows"
+pause 2
