@@ -3,7 +3,7 @@
 i = matchtimeout 1, "mind lock" 
 array = ["mpp 2", "maf 2", "ease"]
 y = array.size
-x = 0 % y
+x = 0 
 echo y 
 
 until matchtimeout 1, "mind lock" do   
@@ -15,7 +15,7 @@ put "app arm careful"
 pause 17
 put "rem arm"
 pause 2
-put "prep " + array[x]
+put "prep " + array[x % 3]
 pause 2
 put "charge my arm 2"
 pause 8
