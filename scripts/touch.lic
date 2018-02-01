@@ -15,7 +15,7 @@
 #if hp gets below 99 it leaves and starts healing	
  
 	while checkhealth == 100
-		if checkpc != nil
+		if checkpcs != nil
 		put "touch " + checkpcs.last
 		pause 2
 		put "take " + checkpcs.last + " all quick"
