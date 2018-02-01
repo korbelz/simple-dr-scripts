@@ -2,12 +2,11 @@
 
 i = matchtimeout 1, "mind lock" 
 array = ["mpp 2", "maf 2", "ease"]
-x = 0 
 y = array.size
+x = 0 % y
 echo y 
 
 until matchtimeout 1, "mind lock" do   
-checkhealth
 put "pow"
 pause 10
 put "app ring careful"
@@ -16,18 +15,14 @@ put "app glov careful"
 pause 17
 put "rem arm"
 pause 2
-while x < y do
-    put "prep " + array[x]
-	pause 2
-	put "charge my arm 2"
-	pause 8
-	put "invoke my arm"
-	pause 16
-	put "cast"
-	pause 5 
-	x += 1
-	echo x
-end
+put "prep " + array[x]
+pause 2
+put "charge my arm 2"
+pause 8
+put "invoke my arm"
+pause 16
+put "cast"
+pause 5 
 put "wear arm"
 pause 2	
 put "exp magic"
@@ -39,7 +34,6 @@ pause 17
 put "app glov careful"
 pause 17
 echo i
-echo "waiting 60 seconds before buffing again"
-pause 60
+x += 1
 end
 start_script "ccollect"

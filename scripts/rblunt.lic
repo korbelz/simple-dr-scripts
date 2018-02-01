@@ -1,10 +1,19 @@
 #comment  
 #Script to kill things
+#matchtimeout command is a Boolean flag looking for "dead string" in the exp field. 
+# dead is death string; $a is "noun" of critter you are currently hunting, comment out all but one.
+# A silver-backed bear growls one last time and collapses.
+# A young ogre howls in pain, then pitches forward onto its face and goes still.
+# A blood wolf whines briefly before closing its eyes forever.
+# A dire bear growls one last time and collapses.
+dead = matchtimeout 1, "A silver-backed bear growls one last time and collapses."
+
 
 
 sea = %w[leucro bear sil thug ruff cut foot]
 loot = ["silver coin", "gold coin", "trunk", "chest", "cask", "strongbox", "box", "caddy"]
 dead = matchtimeout 1, "appears dead"
+exp = matchtimeout 1, "mind lock"
 
 x = 0 
 
@@ -26,16 +35,17 @@ until matchtimeout 1, "appears dead" do
 	pause 10
 	put "weave"
 	pause 6
-	put "attack"
-    pause 9
 	put "hi"
 	pause 7
 	put "stalk"
 	pause 6
+	put "claw"
+    pause 3
+	put "attack"
+    pause 8
 	put "look"
 	echo dead
 end
-#skinning section
 put "wear Longb"
 pause 2
 put "put flail in my back"
@@ -71,8 +81,11 @@ while y < 8
 end
 #not sure what I was trying to do here
 put "exp twohanded blunt"
+i = matchtimeout 1, "nearly locked"
 pause 1
-# This will loop forever and EVER
-start_script('blunt2', [x], force: true)
+
+start_script "longb"
+#placeholder code that does a force restart of same script
+#start_script('magic', [x], force: true)
 
 

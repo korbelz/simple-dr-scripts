@@ -1,6 +1,6 @@
  #formatting and everything else is a mess on the script 
   
-array = ["mpp 2", "maf 2", "ease"]
+array = ["inst 20", "sott 20", "cotc 20" , "em 10" , "ey 10"]
 x = 0 
 y = array.size
 echo y 
@@ -8,16 +8,16 @@ echo y
 checkhealth
 put "pow"
 pause 10
-put "app ring careful"
+put "app bun careful"
 pause 17
-put "app glov careful"
+put "app arm careful"
 pause 17
 put "rem arm"
 pause 2
 while x < y do
     put "prep " + array[x]
 	pause 2
-	put "charge my arm 2"
+	put "charge my arm 10"
 	pause 8
 	put "invoke my arm"
 	pause 16
@@ -32,10 +32,10 @@ put "exp magic"
 pause 2
 put "pow"
 pause 10
-put "app ring careful"
+put "app bun careful"
 pause 17
-put "app glov careful"
+put "app arm careful"
 pause 17
-echo "waiting 60 seconds before buffing again"
-pause 60
-start_script('cbuff', [checkhealth], force:true)
+echo "*** end ***"
+
+

@@ -72,4 +72,4 @@ pause 1
 pause 2
 start_script("go2",[6212])
 pause 90
-start_script "eswim1"
+start_script "ebuff1"
