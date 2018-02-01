@@ -15,7 +15,7 @@ put "app glov careful"
 pause 17
 put "rem arm"
 pause 2
-put "prep " + array[x]
+put "prep " + array[x % 3]
 pause 2
 put "charge my arm 4"
 pause 8

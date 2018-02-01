@@ -11,9 +11,11 @@
 	echo checkpcs.last
 	pause 2
     checkhealth
-#healing text goes here, cycle array x times.	
+#healing text goes here; heals last person in line waits 60 seconds, then heals 1st waits 60 seconds.
+#if hp gets below 99 it leaves and starts healing	
  
 	while checkhealth == 100
+		if checkpc != nil
 		put "touch " + checkpcs.last
 		pause 2
 		put "take " + checkpcs.last + " all quick"
@@ -26,6 +28,13 @@
 		put "accept tip"
 		put "per health self"
 		pause 20
+		put "touch " + checkpcs[0]
+		pause 2
+		put "take " + checkpcs[0] + " all quick"
+		pause 60
+		put "accept"
+		put "accept tip"
+		end
 		checkhealth
 		pause 2
 		echo checkhealth
@@ -38,6 +47,7 @@
 	end	
 	put "accept"
 	put "accept tip"
+	pause 2
 	start_script('go2',[6212])
 	pause 20
 	start_script "healself"
