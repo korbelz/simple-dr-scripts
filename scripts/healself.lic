@@ -47,7 +47,7 @@
 	while x < 9 do
 		put "prep heal 15"
 		pause 2
-		put "charge my brac 3"
+		put "charge my brac 5"
 		pause 8
 		put "invoke my brac"
 		pause 15

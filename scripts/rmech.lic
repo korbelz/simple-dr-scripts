@@ -38,5 +38,5 @@ while i < 3
 	i += 1
 end	
 
-start_script "swim3" 
+start_script "magicT" 
     

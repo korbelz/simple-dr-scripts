@@ -1,7 +1,8 @@
 #
 #
 #
-#testing arrays and modulos %; code works
+#testing arrays and modulos %; code works ***
+
 #array = ["one", "two", "three","four"]
 
 #x = 0
@@ -20,7 +21,7 @@
 #end
 
 
-#testing taking multiple user input at once; code works
+#testing taking multiple user input at once; code works ***
 # variable[1, 2]
 # puts "teach variable[1] to variable[2]" 
 # echo variable[1]
@@ -38,6 +39,29 @@
 #pause 1
 #echo i 
 
+#check is array is nil; code works***
+#checkpcs
+#	x = 0
+#	echo checkpcs.last
+#	pause 2
+#   checkhealth
+ 
+#	while checkhealth == 100
+#		if checkpcs != nil
+#		echo "the array isn't nil"
+#		pause 20
+#		end
+#		echo "my gawd man its nil"
+#		checkhealth
+#		pause 2
+#		echo checkhealth
+#		pause 2
+#		break if checkhealth < 99
+#		x += 1
+#		checkpcs
+#		echo checkpcs.last
+#        pause 2		
+#	end
 
 
 

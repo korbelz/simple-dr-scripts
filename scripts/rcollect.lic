@@ -14,6 +14,6 @@ until matchtimeout 1, "mind lock" do
 	echo i
 end
 pause 48
-start_script "mech"
+start_script "rmech"
 
 
