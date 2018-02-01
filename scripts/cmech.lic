@@ -15,6 +15,7 @@ while i < 3
 	  echo a
 	  a += 1
 	end
+	a -= 15
 	put "for vine"
 	pause 5
 	while b < 16
@@ -24,6 +25,7 @@ while i < 3
 	  echo b
 	  b += 1
 	end
+	b -= 15
 	put "drop my vine"
 	put "drop my vine"
 	pause 5
@@ -37,6 +39,7 @@ while i < 3
     pause 2
 	i += 1
 end	
+	
 
 start_script "cswim1" 
     

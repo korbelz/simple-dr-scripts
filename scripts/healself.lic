@@ -15,14 +15,14 @@
 	pause 12
 	put "per health self"
 	pause 12
-	put "rem brac"
+	put "rem arm"
 	pause 2
 	while x < 4
 		put "prep heal 15"
 		pause 2
-		put "charge my brac 5"
+		put "charge my arm 5"
 		pause 8
-		put "invoke my brac"
+		put "invoke my arm"
 		pause 15
 		put "cast " 
 		pause 2
@@ -47,9 +47,9 @@
 	while x < 9 do
 		put "prep heal 15"
 		pause 2
-		put "charge my brac 5"
+		put "charge my arm 5"
 		pause 8
-		put "invoke my brac"
+		put "invoke my arm"
 		pause 15
 		put "cast " 
 		pause 2 
@@ -57,7 +57,7 @@
 	end
 	
 	echo "scars done"
-	put "wear brac"
+	put "wear arm"
 	pause 2
 	put "pow"
 	pause 10
@@ -70,7 +70,7 @@
 	echo checkhealth
 	pause 2
 	if checkhealth > 99 
-		start_script "buff"
+		start_script "ebuff"
 		pause 2
 		elsif
 		start_script('healself', [checkhealth], force:true)

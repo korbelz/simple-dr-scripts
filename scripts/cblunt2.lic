@@ -1,0 +1,80 @@
+#comment  
+#Script to kill things
+
+
+sea = %w[gob coug leucro bear sil thug ruff cut foot troll]
+loot = ["silver coin", "gold coin", "trunk", "chest", "cask", "strongbox", "box", "caddy"]
+dead = matchtimeout 1, "appears dead"
+
+x = 0 
+
+put "put clay in my back"
+pause 2
+put "get flail from my back"
+pause 2
+put "rem leathers"
+pause 2
+put "put leathers in my back"
+pause 2
+put "get hau from my back"
+pause 2
+put "wear hau"
+pause 6
+ 
+until matchtimeout 1, "appears dead" do  
+	put "hunt"
+	pause 10
+	put "weave"
+	pause 6
+	put "hi"
+	pause 7
+	put "stalk"
+	pause 6
+	put "claw"
+    pause 3
+	put "attack"
+    pause 8
+	put "look"
+	echo dead
+end
+#skinning section
+put "wear Longb"
+pause 2
+put "put flail in my back"
+pause 2
+put "get clay from my back"
+pause 2
+put "arr for skin"
+pause 3
+put "arr for skin"
+pause 3
+put "arr for skin"
+pause 3
+put "arr for skin"
+pause 3
+put "arr for skin"
+pause 3
+put "skin"
+pause 3
+#search and loot all possible enemies in this section using sea and loot array
+a = 0
+while a < 11
+  put "sea " + sea[a]
+  pause 1
+  a += 1
+end
+pause 1
+y = 0
+while y < 8
+  put "get " + loot[y]
+  put "stow " + loot[y]
+  pause 1
+  y += 1
+end
+#not sure what I was trying to do here
+put "exp twohanded blunt"
+pause 1
+# This will loop forever and EVER
+start_script('rblunt2', [x], force: true)
+
+
