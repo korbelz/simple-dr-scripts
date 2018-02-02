@@ -10,7 +10,7 @@ loot = ["silver coin", "gold coin", "trunk", "chest", "cask", "strongbox", "box"
 dead = matchtimeout 1, "appears dead"
 exp = matchtimeout 1, "mind lock"
 
-array = ["df 6", "devi 17", "ec 19","stamp 12","griz 11"]
+array = ["ff 1", "sick 1", "ff 1","sick 1","ff 1"]
 
 x = 0 
  

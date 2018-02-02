@@ -18,9 +18,9 @@
 	put "rem arm"
 	pause 2
 	while x < 4
-		put "prep heal 15"
+		put "prep heal 20"
 		pause 2
-		put "charge my arm 5"
+		put "charge my arm 1"
 		pause 8
 		put "invoke my arm"
 		pause 15
@@ -45,9 +45,9 @@
 	
 	#comment here
 	while x < 9 do
-		put "prep heal 15"
+		put "prep heal 20"
 		pause 2
-		put "charge my arm 5"
+		put "charge my arm 1"
 		pause 8
 		put "invoke my arm"
 		pause 15
