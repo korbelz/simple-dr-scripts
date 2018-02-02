@@ -1,0 +1,52 @@
+#gets an Asketi favor orb
+#you need a BOTTLE from cleric shop
+#you need enough xp for to fill orb; use favor2 if you want to fill orb later.
+
+echo "*** use favor2 if you dont have enough xp to fill orb***"
+pause 10
+
+#goto crossing shop
+start_script("go2",[8265])
+pause 90
+put "read cata"
+pause 1
+put "read page 1"
+pause 1
+put "buy small sack"
+pause 1
+put "offer 106"
+pause 1
+
+
+#gets holy water from crossing temple
+start_script("go2",[5779])
+pause 60
+put "get bottle from my back"
+pause 2
+put "fill my bottle with water from basin"
+pause 5
+
+
+start_script("go2",[5851])
+pause 60
+put "clean heavy alt with holy water"
+pause 30
+put "put my bottle in my back"
+pause 1
+put "put sack on heavy alt"
+pause 1
+put "pray"
+pause 30
+put "get orb"
+pause 2
+put "hug orb"
+pause 2
+put "put orb on heavy alt"
+pause 5
+put "' keep the north winds at your back"
+put "smile"
+pause 2
+
+start_script("go2",[6212])
+pause 60
+

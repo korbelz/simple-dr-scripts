@@ -66,14 +66,14 @@ put "skin"
 pause 3
 #search and loot all possible enemies in this section using sea and loot array
 a = 0
-while a < 11
+while a < sea.size
   put "sea " + sea[a]
   pause 1
   a += 1
 end
 pause 1
 y = 0
-while y < 8
+while y < loot.size
   put "get " + loot[y]
   put "stow " + loot[y]
   pause 1
@@ -84,7 +84,7 @@ put "exp twohanded blunt"
 i = matchtimeout 1, "nearly locked"
 pause 1
 
-start_script "longb"
+start_script "clongb"
 #placeholder code that does a force restart of same script
 #start_script('magic', [x], force: true)
 

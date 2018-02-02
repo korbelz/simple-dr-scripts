@@ -58,14 +58,14 @@ put "skin"
 pause 3
 #search and loot all possible enemies in this section using sea and loot array
 a = 0
-while a < 11
+while a < sea.size
   put "sea " + sea[a]
   pause 1
   a += 1
 end
 pause 1
 y = 0
-while y < 8
+while y < loot.size
   put "get " + loot[y]
   put "stow " + loot[y]
   pause 1
@@ -75,6 +75,6 @@ end
 put "exp twohanded blunt"
 pause 1
 # This will loop forever and EVER
-start_script('rblunt2', [x], force: true)
+start_script('cblunt2', [x], force: true)
 
 

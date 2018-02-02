@@ -28,11 +28,11 @@ until matchtimeout 1, "mind lock" do
 	put "n"
 	pause 8
 	put "n"
-	pause 8
+	pause 15
 	put "nw"
-	pause 11
+	pause 15
 	put "ne"
-	pause 11
+	pause 15
 	put "n"
 	pause 8
 	put "n"
@@ -70,11 +70,11 @@ until matchtimeout 1, "mind lock" do
 	put "s"
 	pause 8
 	put "s"
-	pause 8
+	pause 15
 	put "sw"
-	pause 11
+	pause 15
 	put "se"
-	pause 11
+	pause 15
 	put "s"
 	pause 8
 	put "s"
@@ -102,4 +102,4 @@ pause 1
 pause 2
 start_script("go2",[6212])
 pause 90
-start_script "cbuff1"
+start_script "magicT"

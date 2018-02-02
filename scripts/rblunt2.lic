@@ -2,7 +2,7 @@
 #Script to kill things
 
 
-sea = %w[leucro bear sil thug ruff cut foot]
+sea = %w[gob coug leucro bear sil thug ruff cut foot troll]
 loot = ["silver coin", "gold coin", "trunk", "chest", "cask", "strongbox", "box", "caddy"]
 dead = matchtimeout 1, "appears dead"
 
@@ -58,14 +58,14 @@ put "skin"
 pause 3
 #search and loot all possible enemies in this section using sea and loot array
 a = 0
-while a < 6
+while a < sea.size
   put "sea " + sea[a]
   pause 1
   a += 1
 end
 pause 1
 y = 0
-while y < 8
+while y < loot.size
   put "get " + loot[y]
   put "stow " + loot[y]
   pause 1
