@@ -20,7 +20,7 @@
 	while x < 4
 		put "prep heal 20"
 		pause 2
-		put "charge my arm 1"
+		put "charge my arm 2"
 		pause 8
 		put "invoke my arm"
 		pause 15

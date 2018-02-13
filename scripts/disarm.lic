@@ -9,7 +9,7 @@ echo box
 pause 2
 
 #goto statement for debugging, uncomment to jump to section of code
-goto "pick"
+#goto "pick"
 #goto "harvest"
 
 id:
