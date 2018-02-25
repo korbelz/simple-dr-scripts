@@ -10,7 +10,7 @@ loot = ["silver coin", "gold coin", "trunk", "chest", "cask", "strongbox", "box"
 dead = matchtimeout 1, "appears dead"
 exp = matchtimeout 1, "mind lock"
 
-array = ["ff 1", "sick 1", "ff 1","sick 1","ff 1"]
+array = ["ff 5", "sick 4", "ff 5","sick 4","ff 5"]
 
 x = 0 
  
@@ -48,14 +48,14 @@ put "skin"
 pause 3
 #search and loot all possible enemies in this section using sea and loot array
 a = 0
-while a < 11
+while a < sea.size
   put "sea " + sea[a]
   pause 1
   a += 1
 end
 pause 1
 y = 0
-while y < 8
+while y < loot.size
   put "get " + loot[y]
   put "stow " + loot[y]
   pause 1

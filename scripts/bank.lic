@@ -3,6 +3,8 @@
 # need to add an array for metal gear that needs to be repaired + loop
 #
 
+start_script("go2",[733])
+pause 45
 x = 0
 multimove "se","go bank","go booth"
 put "exch all l to k"
@@ -17,7 +19,7 @@ put "dep all"
 pause 10
 put "bal"
 pause 10
-put "withdraw 4 gold k"
+put "withdraw 1 gold k"
 pause 2
 multimove "out","out","nw"
 echo "done with the bank"

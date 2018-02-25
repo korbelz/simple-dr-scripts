@@ -21,7 +21,29 @@ pause 15
 put "pray asketi"
 pause 15
 put "commune sense"
-pause 30
+pause 15
+start_script("go2",[5779])
+pause 60
+put "get bottle from my back"
+pause 2
+put "fill my bottle with water from basin"
+pause 5
+put "sprinkle bottle on kerbo"
+pause 2
+put "Commune tamsine"
+pause 15
+put "put bottle in my back"
+pause 2
+start_script("go2",[5988])
+pause 60
+put "meditate"
+pause 10
+start_script("go2",[6212])
+pause 60
+put "commune"
+pause 15
+put "pray asketi"
+pause 15
 echo "*** 10 minutes till pray time ***"
 pause 60
 echo "*** 9 minutes till pray time ***"
