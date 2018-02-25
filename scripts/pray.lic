@@ -32,8 +32,20 @@ put "sprinkle bottle on kerbo"
 pause 2
 put "Commune tamsine"
 pause 15
-put "put bottle in my back"
+put "fill my bottle with water from basin"
 pause 2
+start_script("go2",[5851])
+pause 60
+put "clean heavy alt with holy water"
+pause 30
+put "put my bottle in my back"
+pause 2
+put "dance"
+pause 16
+put "dance"
+pause 16
+put "dance"
+pause 16
 start_script("go2",[5988])
 pause 60
 put "meditate"
