@@ -1,10 +1,10 @@
 #Script to train tactics, and stealth
 #
 #
-
+x = 0
 stop = matchtimeout 1, "massive opening"
 
-put "face other hog"
+put "face other coug"
 pause 2
 until matchtimeout 1, "massive opening" do   
 	pause 5
@@ -23,4 +23,4 @@ until matchtimeout 1, "massive opening" do
 	echo stop
 end
 pause 5
-start_script "anal"
+start_script('anal2', [x], force: true)
