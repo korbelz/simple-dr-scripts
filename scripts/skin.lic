@@ -1,9 +1,11 @@
-# A giant black leucro collapses to the ground, yelping like a lost puppy calling for its mother until finally it ceases all movement.
+# standalone script that just does skinning when you are manually hunting.
 
 
 put "wear Longb"
 pause 2
-put "get clay from my pack"
+put "put flail in my back"
+pause 2
+put "get clay from my back"
 pause 2
 put "arr for skin"
 pause 3
