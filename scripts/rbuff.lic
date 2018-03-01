@@ -1,6 +1,8 @@
- #formatting and everything else is a mess on the script 
+#pre-combat buff casting script, also does some app.  
+
+
   
-array = ["inst 20", "sott 20", "cotc 20" , "em 10" , "ey 10"]
+array = ["inst 20", "sott 20", "cotc 20" , "em 10" , "stw 20" , "ey 10"]
 x = 0 
 y = array.size
 echo y 

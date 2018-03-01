@@ -1,18 +1,17 @@
-#script design to be part of "training flow".
-#getting mind locked will cause this script to move on to next script in the flow.
-  
+#stand alone script designed to raise buffing magic skills till you manually kill it.
+
 i = matchtimeout 1, "mind lock" 
-array = ["bs 20", "ic 10", "mef 10"]
+array = ["mpp 5", "bless 5", "center 5"]
 y = array.size
 x = 0 
 echo y 
 
-until matchtimeout 1, "mind lock" do   
+until matchtimeout 1, "hellisfrozen" do   
 put "pow"
 pause 10
 put "app ring careful"
 pause 17
-put "app glov careful"
+put "app arm careful"
 pause 17
 put "rem arm"
 pause 2
@@ -30,4 +29,4 @@ put "exp magic"
 echo i
 x += 1
 end
-start_script "ecollect"
+

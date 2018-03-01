@@ -1,12 +1,12 @@
 #script design to be part of "training flow".
 #getting mind locked will cause this script to move on to next script in the flow.
-  
-i = matchtimeout 1, "mind lock" 
-array = ["bs 20", "ic 10", "mef 10"]
-y = array.size
-x = 0 
-echo y 
 
+
+array = ["inst 20", "sott 20", "cotc 20" , "em 10" , "stw 20" , "ey 10"]
+x = 0 
+y = array.size
+echo y 
+  
 until matchtimeout 1, "mind lock" do   
 put "pow"
 pause 10
@@ -30,4 +30,7 @@ put "exp magic"
 echo i
 x += 1
 end
-start_script "ecollect"
+start_script "rcollect"
+echo "*** end ***"
+
+
