@@ -1,7 +1,7 @@
 #stand alone script designed to raise buffing magic skills till you manually kill it.
 
 i = matchtimeout 1, "mind lock" 
-array = ["mpp 5", "bless 5", "center 5"]
+array = ["mpp 5", "bless 5", "center 5", "mapp 5"]
 y = array.size
 x = 0 
 echo y 
@@ -15,7 +15,7 @@ put "app arm careful"
 pause 17
 put "rem arm"
 pause 2
-put "prep " + array[x % 3]
+put "prep " + array[x % 4]
 pause 2
 put "charge my arm 5"
 pause 8
