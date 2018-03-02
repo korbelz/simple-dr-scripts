@@ -26,7 +26,7 @@ pause 5
 put "wear arm"
 pause 2	
 put "exp magic"
-echo i
+echo x
 x += 1
 end
 echo "*** end ***"
