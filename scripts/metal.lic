@@ -2,42 +2,24 @@
 #TODO: 
 #
 
-array = ["cowl", "glov", "leathers", "tar"]
+array = ["clay", "flai", "hau"]
 y = array.size
 x = 0 
 echo y 
 
 put "put clay in my back"
 pause 1
-start_script("go2",[1539])
+start_script("go2",[19093])
 pause 60
-put "go build"
-pause 1
-put "get pelt"
-pause 1
-put "put pelt in my back"
-pause 1
-put "rem bun"
-pause 1
-put "sell bun"
-pause 1
-put "get pelt from my back"
-pause 1
-put "bun"
-pause 1
-put "wear bun"
-pause 1
-put "e"
-pause 1
 
 while x < array.size do
     put "rem " + array[x]
     pause 1
 	put "get " + array[x]
     pause 1
-	put "give " + array[x] + " to rand"
+	put "give " + array[x] + " to cat"
     pause 1
-	put "give " + array[x] + " to rand"
+	put "give " + array[x] + " to cat"
     pause 1
 	put "put ticket in my back"
     pause 1
@@ -50,7 +32,7 @@ pause 200
 while x < array.size do
     put "get ticket from my back"
     pause 1
-    put "give ticket to rand"
+    put "give ticket to cat"
     pause 1
     put "wear " + array[x]
     pause 1
@@ -63,6 +45,3 @@ end
 x -= array.size
 pause 1
 start_script("go2",[6212])
-
-
-	
