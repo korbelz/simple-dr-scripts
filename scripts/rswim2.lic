@@ -28,7 +28,7 @@ until matchtimeout 1, "mind lock" do
 	put "n"
 	pause 8
 	put "n"
-	pause 15
+	pause 8
 	put "nw"
 	pause 15
 	put "ne"
@@ -70,7 +70,7 @@ until matchtimeout 1, "mind lock" do
 	put "s"
 	pause 8
 	put "s"
-	pause 15
+	pause 8
 	put "sw"
 	pause 15
 	put "se"

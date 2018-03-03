@@ -9,8 +9,6 @@ echo y
 until matchtimeout 1, "hellisfrozen" do   
 put "pow"
 pause 10
-put "app ring careful"
-pause 17
 put "app arm careful"
 pause 17
 put "rem arm"

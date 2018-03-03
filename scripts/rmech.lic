@@ -1,5 +1,5 @@
 #Trains mech lore
-#moves to swim3 script when done.
+#moves to swim2 script when done.
 
 i = 0
 a = 0
@@ -41,5 +41,5 @@ while i < 3
 end	
 	
 
-start_script "magicT" 
+start_script "rswim2" 
     

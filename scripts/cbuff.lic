@@ -11,9 +11,7 @@ echo y
 checkhealth
 put "pow"
 pause 10
-put "app ring careful"
-pause 17
-put "app glov careful"
+put "app arm careful"
 pause 17
 put "rem arm"
 pause 2
@@ -36,6 +34,4 @@ pause 2
 put "pow"
 pause 10
 put "app ring careful"
-pause 17
-put "app glov careful"
 pause 17

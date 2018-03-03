@@ -9,9 +9,7 @@ echo y
 until matchtimeout 1, "hellisfronze" do   
 put "pow"
 pause 10
-put "app ring careful"
-pause 17
-put "app glov careful"
+put "app arm careful"
 pause 17
 put "rem arm"
 pause 2

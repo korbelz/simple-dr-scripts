@@ -10,8 +10,6 @@ echo y
 checkhealth
 put "pow"
 pause 10
-put "app bun careful"
-pause 17
 put "app arm careful"
 pause 17
 put "rem arm"
@@ -34,8 +32,6 @@ put "exp magic"
 pause 2
 put "pow"
 pause 10
-put "app bun careful"
-pause 17
 put "app arm careful"
 pause 17
 echo "*** end ***"
