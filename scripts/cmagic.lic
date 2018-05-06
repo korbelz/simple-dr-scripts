@@ -1,9 +1,7 @@
-#Combat spell script
-#change $i to death string for the enemy you are fighting
-#change spells to spells you would like to use
-# A young ogre howls in pain, then pitches forward onto its face and goes still.
-# A dire bear growls one last time and collapses.
-# A giant black leucro collapses to the ground, yelping like a lost puppy calling for its mother until finally it ceases all movement.
+#Combat spell script for cleric
+#
+
+echo "*** Will run combat magic forever till manually stopped ***"
 
 sea = %w[gob coug leucro bear sil thug ruff cut foot troll og og]
 loot = ["silver coin", "gold coin", "trunk", "chest", "cask", "strongbox", "box", "caddy"]
@@ -18,6 +16,7 @@ until matchtimeout 1, "appears dead" do
 	pause 2
 	put "hunt"
 	pause 10
+	#number after % should match spells in array.
 	put "prep " + array[x % 5]
 	pause 2
 	put "tar"
@@ -61,7 +60,7 @@ while y < loot.size
   pause 1
   y += 1
 end
-start_script('magic', [x], force: true)
+start_script('cmagic', [x], force: true)
 
 
 

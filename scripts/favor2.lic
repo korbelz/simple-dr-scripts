@@ -1,0 +1,31 @@
+#walk around looking at donation shelves in the crossings
+
+#Ranger donation rack; might need to increase first pause if you live far away from town
+start_script("go2",[13213])
+pause 20
+put "look on rack"
+pause 60
+
+#cleric donation chest
+start_script("go2",[5990])
+pause 20
+put "look in chest"
+pause 60
+
+#empath donation shelves
+start_script("go2",[5992])
+pause 20
+put "look on shelf"
+pause 60
+
+#pally chambers donation shelves
+start_script("go2",[7890])
+pause 20
+put "look on rack"
+pause 60
+
+#bank donation table, put this one last cause it seems least useful.
+start_script("go2",[1901])
+pause 20	
+put "look on table"
+pause 60

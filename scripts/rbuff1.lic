@@ -1,6 +1,7 @@
 #script design to be part of "training flow".
 #getting mind locked will cause this script to move on to next script in the flow.
 
+echo "*** will cast buff spells till you hit mind locked ***"
 
 array = ["inst 20", "sott 20", "cotc 20" , "em 10" , "stw 20" , "ey 10"]
 x = 0 
@@ -8,26 +9,29 @@ y = array.size
 echo y 
   
 until matchtimeout 1, "mind lock" do   
-put "pow"
-pause 10
-put "app arm careful"
-pause 17
-put "rem arm"
-pause 2
-put "prep " + array[x % 3]
-pause 2
-put "charge my arm 5"
-pause 8
-put "invoke my arm"
-pause 16
-put "cast"
-pause 5 
-put "wear arm"
-pause 2	
-put "exp magic"
-echo i
-x += 1
+    put "pow"
+    pause 10
+    put "app arm careful"
+    pause 17
+    put "rem arm"
+    pause 2
+    #number after % should match spells in array.
+    put "prep " + array[x % 6]
+    pause 2
+    put "charge my arm 5"
+    pause 8
+    put "invoke my arm"
+    pause 16
+    put "cast"
+    pause 5 
+    put "wear arm"
+    pause 2	
+    put "exp magic"
+    echo x
+    x += 1
 end
+#pause is to allow exp drain so next script doesn't insta hit mind locked
+pause 48
 start_script "rcollect"
 echo "*** end ***"
 

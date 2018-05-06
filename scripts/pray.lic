@@ -24,6 +24,8 @@ put "commune sense"
 pause 15
 start_script("go2",[5779])
 pause 60
+start_script("go2",[5779])
+pause 30
 put "get bottle from my back"
 pause 2
 put "fill my bottle with water from basin"

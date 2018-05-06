@@ -61,7 +61,7 @@ while y < loot.size
   pause 1
   y += 1
 end
-start_script('magic', [x], force: true)
+start_script('rmagic', [x], force: true)
 
 
 

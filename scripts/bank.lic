@@ -1,7 +1,6 @@
-#rep metal stuff, then drop off money at the bank
-# need to add a 'go2' at start so you dont need to manually move to room 733
-# need to add an array for metal gear that needs to be repaired + loop
-#
+#goes to crossing bank and drops off all coin
+# 
+#end of script goes back to not-so-safe room.
 
 start_script("go2",[1901])
 pause 45
@@ -20,6 +19,6 @@ put "dep all"
 pause 10
 put "bal"
 pause 10
-echo "done with the bank"
 start_script("go2",[6212])
-
+pause 45
+echo "*** done with the bank ***"

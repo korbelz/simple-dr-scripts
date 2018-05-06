@@ -1,4 +1,6 @@
 #stand alone script designed to raise buffing magic skills till you manually kill it. 
+
+echo "*** will cast buff spells forever ***"
   
 i = matchtimeout 1, "mind lock" 
 array = ["bs 20", "ic 10", "mef 10"]
@@ -7,24 +9,25 @@ x = 0
 echo y 
 
 until matchtimeout 1, "hellisfronze" do   
-put "pow"
-pause 10
-put "app arm careful"
-pause 17
-put "rem arm"
-pause 2
-put "prep " + array[x % 3]
-pause 2
-put "charge my arm 5"
-pause 8
-put "invoke my arm"
-pause 16
-put "cast"
-pause 5 
-put "wear arm"
-pause 2	
-put "exp magic"
-echo i
-x += 1
+    put "pow"
+    pause 10
+    put "app arm careful"
+    pause 17
+    put "rem arm"
+    pause 2
+    #number after % should match spells in array.
+    put "prep " + array[x % 3]
+    pause 2
+    put "charge my arm 5"
+    pause 8
+    put "invoke my arm"
+    pause 16
+    put "cast"
+    pause 5 
+    put "wear arm"
+    pause 2	
+    put "exp magic"
+    echo i
+    x += 1
 end
 
