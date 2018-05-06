@@ -19,7 +19,7 @@ pause 1
 put "go room"
 pause 1
 
-while x < 39
+while x < array.size
   put "get " + array[x] + " from my pouch"
   pause 1
   put "sell " + array[x] 

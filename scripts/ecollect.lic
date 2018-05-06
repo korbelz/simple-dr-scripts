@@ -1,6 +1,5 @@
-#Script to rasie Perception and Outdoorsmanship
-#matchtimeout command is a Boolean flag looking for "mind lock" in the exp field. 
-#once mind locked script moves to mech.
+#Script to raise Perception and Outdoorsmanship
+#once mind locked script moves to Swim2.
 
 i = matchtimeout 1, "mind lock"
 
@@ -14,6 +13,6 @@ until matchtimeout 1, "mind lock" do
 	echo i
 end
 pause 48
-start_script "emech"
+start_script "eswim2"
 
 

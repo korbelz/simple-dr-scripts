@@ -1,35 +1,42 @@
 #Trains mech lore
-#moves to swim2 script when done.
+#moves to collect(outdoormanship) script when done.
 
 i = 0
 a = 0
 b = 0
+
+#need better weapon stow section, hands need to be clear.
+put "put clay in my back"
+pause 1
+put "put flail in my back"
+pause 1
+put "wear longb"
+pause 1
    
 while i < 3 
 	put "for vine"
 	pause 5
 	while a < 16
-	  put "braid my vine"
-	  pause 12
-	  echo "a "
-	  echo a
-	  a += 1
+	    put "braid my vine"
+	    pause 12
+	    echo "a "
+	    echo a
+	    a += 1
 	end
 	a -= 15
 	put "for vine"
 	pause 5
 	while b < 16
-	  put "braid my vine"
-	  pause 12
-	  echo "b "
-	  echo b
-	  b += 1
+	    put "braid my vine"
+	    pause 12
+	    echo "b "
+	    echo b
+	    b += 1
 	end
 	b -= 15
 	put "drop my vine"
 	put "drop my vine"
 	pause 5
-	pause 1
 	echo i
     put "prep comp 20"
     pause 20
@@ -41,5 +48,5 @@ while i < 3
 end	
 	
 
-start_script "rswim2" 
+start_script "rcollect" 
     

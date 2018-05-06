@@ -32,7 +32,7 @@ until matchtimeout 1, "mind lock" do
 end
 #pause is to allow exp drain so next script doesn't insta hit mind locked
 pause 48
-start_script "rcollect"
-echo "*** end ***"
+start_script "rmech"
+
 
 

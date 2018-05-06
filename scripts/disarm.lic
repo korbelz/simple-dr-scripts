@@ -8,9 +8,9 @@ box = checkright
 echo box 
 pause 2
 
-#goto statement for debugging, uncomment to jump to section of code
-#goto "pick"
-#goto "harvest"
+#uncomment this if you've already disarmed the chest
+goto "pick"
+
 
 id:
 #loop to disarm identify
