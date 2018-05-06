@@ -7,6 +7,29 @@ y = array.size
 x = 0 
 echo y 
 
+start_script("go2",[1901])
+pause 45
+x = 0
+
+multimove "go booth"
+put "exch all l to k"
+pause 1
+put "exch all d to k"
+pause 1
+put "out"
+pause 1
+put "go win"
+pause 1
+put "dep all"
+pause 10
+put "bal"
+pause 10
+put "withdraw 5 silver kro"
+pause 10
+start_script("go2",[6212])
+pause 45
+echo "*** done with the bank ***"
+
 put "put clay in my back"
 pause 1
 start_script("go2",[19093])
@@ -14,7 +37,7 @@ pause 60
 
 while x < array.size do
     put "rem " + array[x]
-    pause 1
+    pause 2
 	put "get " + array[x]
     pause 1
 	put "give " + array[x] + " to cat"
@@ -35,7 +58,7 @@ while x < array.size do
     put "give ticket to cat"
     pause 1
     put "wear " + array[x]
-    pause 1
+    pause 2
 	put "put " + array[x] + " in my back"
     pause 1
     pause 1
