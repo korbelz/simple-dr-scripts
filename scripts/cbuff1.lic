@@ -4,7 +4,7 @@
 echo "*** will cast buff spells till you hit mind locked ***"
 
 i = matchtimeout 1, "mind lock" 
-array = ["mpp 5", "bless 5", "center 5", "mapp 5"]
+array = ["mpp 6", "bless 10", "center 10", "mapp 10", "uncurse 10"]
 y = array.size
 x = 0 
 echo y 
@@ -17,9 +17,9 @@ until matchtimeout 1, "mind lock" do
     put "rem arm"
     pause 2
     #number after % should match spells in array.
-    put "prep " + array[x % 4]
+    put "prep " + array[x % y]
     pause 2
-    put "charge my arm 5"
+    put "charge my arm 2"
     pause 8
     put "invoke my arm"
     pause 16
