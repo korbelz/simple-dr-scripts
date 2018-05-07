@@ -51,6 +51,6 @@ end
 put "Dump junk"
 pause 300
 
-start_script('mech2', [x], force: true)
+start_script('mech2', [i], force: true)
 
     

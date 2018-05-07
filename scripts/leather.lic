@@ -34,6 +34,31 @@ put "bun"
 pause 1
 put "wear bun"
 pause 1
+#runs to bank in crossings as soon as you sell your bun.
+start_script("go2",[1901])
+pause 25
+
+multimove "go booth"
+put "exch all l to k"
+pause 1
+put "exch all d to k"
+pause 1
+put "out"
+pause 1
+put "go win"
+pause 1
+put "dep all"
+pause 10
+put "bal"
+pause 10
+put "withdraw 5 silver kro"
+pause 10
+start_script("go2",[1539])
+pause 25
+echo "*** done with the bank ***"
+
+put "go build"
+pause 1
 put "e"
 pause 1
 
@@ -56,7 +81,7 @@ end
 echo x
 #Just hangs out at the rep shop for awhile waiting. 
 pause 260
-while x < array.size do
+while x <= array.size do
     put "get ticket from my back"
     pause 1
     put "give ticket to rand"
@@ -64,9 +89,8 @@ while x < array.size do
     put "wear my " + array[x]
     pause 2
 	put "put my " + array[x] + " in my back"
-    pause 1
-    pause 1
-	x -= 1
+    pause 2
+    x -= 1
 	echo x
 end
 x -= array.size

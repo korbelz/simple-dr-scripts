@@ -8,16 +8,9 @@ x = 0
 
 start_script("go2",[733])
 pause 60
-put "n"
+multimove "n", "e", "e", "go shop", "go room" 
 pause 1
-put "e"
-pause 1
-put "e"
-pause 1
-put "go shop"
-pause 1
-put "go room"
-pause 1
+
 
 while x < array.size
   put "get " + array[x] + " from my pouch"
@@ -26,17 +19,32 @@ while x < array.size
   pause 1
   x += 1
  end
- 
-put "out"
+
+ #runs to bank in crossings as soon as you sell your gems.
+multimove "out", "out", "w", "w", "s" 
+pause 1
+start_script("go2",[1901])
+pause 3
+
+multimove "go booth"
+put "exch all l to k"
+pause 1
+put "exch all d to k"
 pause 1
 put "out"
 pause 1
-put "w"
+put "go win"
 pause 1
-put "w"
-pause 1
-put "s"
-pause 1
+put "dep all"
+pause 10
+put "bal"
+pause 10
+put "withdraw 5 silver kro"
+pause 10
+start_script("go2",[733])
+pause 3
+echo "*** done with the bank ***"
+
 put "go squ"
 pause 1
 put "go door"
@@ -49,6 +57,7 @@ put "go door"
 pause 1
 put "open vault"
 pause 1
+# 3 minutes of vault time before heading back to not so safe room.
 put "look in vault"
 put "look in my back"
 pause 60 
@@ -68,3 +77,6 @@ put "out"
 pause 1
 put "out"
 pause 1
+
+start_script("go2",[6212])
+pause 45
