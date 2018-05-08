@@ -1,15 +1,18 @@
 #comments here
-# This script will raise Appraisal skill
-#  
+# This script will raise Appraisal and performance skill
+#
 #
 
 echo "*** Will Appraisal forever till manually stopped ***"
 
-#Gear you want to app 
+#Gear you want to app
 array = ["ring", "bun", "arm", "cowl", "glov", "leathers", "tar", "longb"]
 y = array.size
-x = 0 
-echo y 
+x = 0
+echo y
+
+song = ["ditty", "folk", "march", "jig", "hymn", "battle", "minuet","dirge", "requiem", ]
+style = ["halting", "confident", "masterful"]
 
 put "put clay in my back"
 pause 1
@@ -21,4 +24,7 @@ while x < array.size do
 	echo x
 end
 x -= array.size
+put "play " + song[0] + " " + style[0]
+pause 120
+
 start_script('app', [x], force: true)

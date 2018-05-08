@@ -1,11 +1,15 @@
-#Trains mech lore
-#moves to collect(outdoormanship) script when done.
+#Trains mech lore and performance
+
 
 echo "*** will mech lore forever ***"
+
+song = ["ditty", "folk", "march", "jig", "hymn", "battle", "minuet","dirge", "requiem", ]
+style = ["halting", "confident", "masterful"]
 
 i = 0
 a = 0
 b = 0
+c = 0
 
 #need better weapon stow section, hands need to be clear.
 put "put clay in my back"
@@ -14,8 +18,8 @@ put "put flail in my back"
 pause 1
 put "wear longb"
 pause 1
-   
-while i < 5 
+
+while i < 5
 	put "for vine"
 	pause 5
 	while a < 16
@@ -47,10 +51,16 @@ while i < 5
     put "exp mech"
     pause 2
 	i += 1
-end	
+end
 put "Dump junk"
-pause 300
+while c < 2 do
+    #
+    put "play " + song[0] + " " + style[0]
+    pause 150
+    put "exp perform"
+    c += 1
+    echo c
+end
+c -= c
 
 start_script('mech2', [i], force: true)
-
-    
