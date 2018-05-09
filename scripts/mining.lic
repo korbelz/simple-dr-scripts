@@ -1,0 +1,37 @@
+# This script needs serious work
+#
+# Tools required: Shovel
+
+
+stone = 0
+echo stone
+pause 2
+
+#Travel to mining area
+start_script("go2",[1901])
+pause 45
+
+#goto label for debugging
+#goto "refine"
+
+echo "start mining"
+pause 1
+put "get shovel"
+pause 1
+
+
+#mining loop
+mine:
+until matchtimeout 1, "text that will end this loop goes here"
+    echo "start mining"
+    put "propect"
+	pause 16
+	put "mine"
+	pause 16
+	put "mine"
+	pause 16
+	put "propect danger"
+	pause 16
+end
+
+#TODO material storage goes here
