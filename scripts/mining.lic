@@ -35,3 +35,10 @@ until matchtimeout 1, "text that will end this loop goes here"
 end
 
 #TODO material storage goes here
+#put ingot in deed
+#push item with my packet
+#put deed in my register
+#turn register to contents
+#read my register
+#turn register to right page
+#pull my register

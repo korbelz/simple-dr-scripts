@@ -1,0 +1,37 @@
+#
+
+#TODO
+
+#22 ingots or 210 volume max
+put my ingot in crucible
+
+#smelt section
+stir crucible with my rod
+
+#if forming lumps
+turn crucible with my rod
+
+#if unable to consume fuel
+push my bellows
+
+#if fire runs out of fuel
+push fuel with my Shovel
+
+#keep stirring till done smelting
+#end smelt
+
+#Refining section; goal is 99 purity
+pour flux into crucible
+
+#repeat smelt section
+
+#put ingot in deed
+#push item with my packet
+#put deed in my register
+#turn register to contents
+#read my register
+#turn register to right page
+#pull my register
+
+
+#done
