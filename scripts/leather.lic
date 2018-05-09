@@ -1,11 +1,11 @@
 #move hunting area to leather rep guy near crossing and sell bundle
-#TODO: 
+#TODO:
 #
 
-# leather gear list in this array. 
+# leather gear list in this array.
 array = ["cowl", "glov", "leathers", "tar"]
 
-x = 0 
+x = 0
 
 
 #need better weapon stow section, hands need to be clear.
@@ -79,16 +79,18 @@ end
 # -= is to reset x back to 0 so it cycles through the gear array again.
 x -= array.size
 echo x
-#Just hangs out at the rep shop for awhile waiting. 
+#Just hangs out at the rep shop for awhile waiting.
 pause 260
 while x < array.size do
     put "get ticket from my back"
     pause 1
     put "give ticket to rand"
     pause 1
-    put "wear my " + array[x]
+    checkright
+    gear = checkright
+    put "wear my " + gear
     pause 2
-	put "put my " + array[x] + " in my back"
+	put "put my " + gear + " in my back"
     pause 2
     x += 1
 	echo x
@@ -96,6 +98,3 @@ end
 x -= array.size
 pause 1
 start_script("go2",[6212])
-
-
-	

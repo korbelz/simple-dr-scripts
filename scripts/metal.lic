@@ -1,11 +1,11 @@
 #move hunting area to leather rep guy and sell bundle
-#TODO: 
+#TODO:
 #
 
 array = ["clay", "flai", "hau"]
 y = array.size
-x = 0 
-echo y 
+x = 0
+echo y
 
 start_script("go2",[1901])
 pause 45
@@ -57,9 +57,11 @@ while x < array.size do
     pause 1
     put "give ticket to cat"
     pause 1
-    put "wear my " + array[x]
+    checkright
+    gear = checkright
+    put "wear my " + gear
     pause 2
-	put "put my " + array[x] + " in my back"
+	put "put my " + gear + " in my back"
     pause 2
     x += 1
 	echo x
