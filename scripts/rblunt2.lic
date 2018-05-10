@@ -1,12 +1,12 @@
-#comment  
+#comment
 #Script to kill things
 
 
 sea = %w[gob coug leucro bear sil thug ruff cut foot troll og og]
-loot = ["silver coin", "gold coin", "trunk", "chest", "cask", "strongbox", "box", "caddy"]
+loot = ["silver coin", "gold coin", "plat coin"]
 dead = matchtimeout 1, "appears dead"
 
-x = 0 
+x = 0
 
 put "put clay in my back"
 pause 2
@@ -20,8 +20,8 @@ put "get hau from my back"
 pause 2
 put "wear hau"
 pause 6
- 
-until matchtimeout 1, "appears dead" do  
+
+until matchtimeout 1, "appears dead" do
 	put "hunt"
 	pause 10
 	put "weave"
@@ -67,14 +67,13 @@ pause 1
 y = 0
 while y < loot.size
   put "get " + loot[y]
-  put "stow " + loot[y]
   pause 1
   y += 1
 end
+put "stow box"
+put "stow gem"
 #not sure what I was trying to do here
 put "exp twohanded blunt"
 pause 1
 # This will loop forever and EVER
 start_script('rblunt2', [x], force: true)
-
-

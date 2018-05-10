@@ -1,21 +1,15 @@
-#comment  
+#comment
 #Script to kill things
-#matchtimeout command is a Boolean flag looking for "dead string" in the exp field. 
-# dead is death string; $a is "noun" of critter you are currently hunting, comment out all but one.
-# A silver-backed bear growls one last time and collapses.
-# A young ogre howls in pain, then pitches forward onto its face and goes still.
-# A blood wolf whines briefly before closing its eyes forever.
-# A dire bear growls one last time and collapses.
-dead = matchtimeout 1, "A silver-backed bear growls one last time and collapses."
+
 
 
 
 sea = %w[gob coug leucro bear sil thug ruff cut foot troll og og]
-loot = ["silver coin", "gold coin", "trunk", "chest", "cask", "strongbox", "box", "caddy"]
+loot = ["silver coin", "gold coin", "plat coin" ]
 dead = matchtimeout 1, "appears dead"
 exp = matchtimeout 1, "mind lock"
 
-x = 0 
+x = 0
 
 put "put clay in my back"
 pause 2
@@ -29,8 +23,8 @@ put "get hau from my back"
 pause 2
 put "wear hau"
 pause 6
- 
-until matchtimeout 1, "appears dead" do  
+
+until matchtimeout 1, "appears dead" do
 	put "hunt"
 	pause 10
 	put "weave"
@@ -75,10 +69,11 @@ pause 1
 y = 0
 while y < loot.size
   put "get " + loot[y]
-  put "stow " + loot[y]
   pause 1
   y += 1
 end
+put "stow box"
+put "stow gem"
 #not sure what I was trying to do here
 put "exp twohanded blunt"
 i = matchtimeout 1, "nearly locked"
@@ -87,5 +82,3 @@ pause 1
 start_script "clongb"
 #placeholder code that does a force restart of same script
 #start_script('magic', [x], force: true)
-
-

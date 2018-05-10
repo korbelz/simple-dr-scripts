@@ -1,9 +1,9 @@
-#comment  
+#comment
 #Script to kill things
 #hunt using claymore
 
 sea = %w[gob coug leucro bear sil thug ruff cut foot troll og og]
-loot = ["silver coin", "gold coin", "trunk", "chest", "cask", "strongbox", "box", "caddy"]
+loot = ["silver coin", "gold coin", "plat coin" ]
 dead = matchtimeout 1, "appears dead"
 exp = matchtimeout 1, "mind lock"
 
@@ -21,7 +21,7 @@ put "wear leathers"
 pause 6
 
 #TEST matchtimeout 1, "appears dead"; code works
-until matchtimeout 1, "appears dead" do   
+until matchtimeout 1, "appears dead" do
 	put "hunt"
 	pause 10
 	put "hi"
@@ -62,9 +62,10 @@ pause 1
 y = 0
 while y < loot.size
   put "get " + loot[y]
-  put "stow " + loot[y]
   pause 1
   y += 1
 end
-#restart script using swim3 start_script set up. 
+put "stow box"
+put "stow gem"
+#restart script using swim3 start_script set up.
 start_script('chunt', [dead], force: true)
