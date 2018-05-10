@@ -1,31 +1,61 @@
-#walk around looking at donation shelves in the crossings
+#gets an Asketi favor orb
+#you need a BOTTLE from cleric shop
+#you need enough xp for to fill orb; use favor2 if you want to fill orb later.
 
-#Ranger donation rack; might need to increase first pause if you live far away from town
-start_script("go2",[13213])
-pause 20
-put "look on rack"
-pause 60
+echo "*** use favor2 if you dont have enough xp to fill orb***"
+pause 10
 
-#cleric donation chest
-start_script("go2",[5990])
-pause 20
-put "look in chest"
-pause 60
+#goto crossing shop
+start_script("go2",[8265])
+while running? "go2"
+    echo running?
+    pause 2
+end
+put "read cata"
+pause 1
+put "read page 1"
+pause 1
+put "buy small sack"
+pause 1
+put "offer 106"
+pause 1
 
-#empath donation shelves
-start_script("go2",[5992])
-pause 20
-put "look on shelf"
-pause 60
 
-#pally chambers donation shelves
-start_script("go2",[7890])
-pause 20
-put "look on rack"
-pause 60
+#gets holy water from crossing temple
+start_script("go2",[5779])
+while running? "go2"
+    echo running?
+    pause 2
+end
+put "get bottle from my back"
+pause 2
+put "fill my bottle with water from basin"
+pause 5
 
-#bank donation table, put this one last cause it seems least useful.
-start_script("go2",[1901])
-pause 20	
-put "look on table"
-pause 60
+
+start_script("go2",[5851])
+while running? "go2"
+    echo running?
+    pause 2
+end
+put "clean heavy alt with holy water"
+pause 30
+put "put my bottle in my back"
+pause 1
+put "put sack on heavy alt"
+pause 1
+put "pray"
+pause 30
+put "get orb"
+pause 2
+put "put orb in my back"
+pause 2
+put "' keep the north winds at your back"
+put "smile"
+pause 2
+
+start_script("go2",[6212])
+while running? "go2"
+    echo running?
+    pause 2
+end

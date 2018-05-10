@@ -18,6 +18,12 @@ c = 0
 p = 0
 echo "praying time!"
 
+put "put clay in my back"
+pause 1
+put "put flail in my back"
+pause 1
+put "wear longb"
+pause 1
 
 put "commune"
 pause 15
@@ -26,9 +32,15 @@ pause 15
 put "commune sense"
 pause 15
 start_script("go2",[5779])
-pause 60
+while running? "go2"
+    echo running?
+    pause 2
+end
 start_script("go2",[5779])
-pause 30
+while running? "go2"
+    echo running?
+    pause 2
+end
 put "get bottle from my back"
 pause 2
 put "fill my bottle with water from basin"
@@ -40,7 +52,10 @@ pause 15
 put "fill my bottle with water from basin"
 pause 2
 start_script("go2",[5851])
-pause 60
+while running? "go2"
+    echo running?
+    pause 2
+end
 put "clean heavy alt with holy water"
 pause 30
 put "put my bottle in my back"
@@ -52,11 +67,17 @@ pause 16
 put "dance"
 pause 16
 start_script("go2",[5988])
-pause 60
+while running? "go2"
+    echo running?
+    pause 2
+end
 put "meditate"
 pause 10
 start_script("go2",[6212])
-pause 60
+while running? "go2"
+    echo running?
+    pause 2
+end
 put "commune"
 pause 15
 put "pray asketi"

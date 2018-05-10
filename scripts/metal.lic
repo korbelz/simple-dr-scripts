@@ -8,7 +8,10 @@ x = 0
 echo y
 
 start_script("go2",[1901])
-pause 45
+while running? "go2"
+    echo running?
+    pause 2
+end
 x = 0
 
 multimove "go booth"
@@ -27,13 +30,19 @@ pause 10
 put "withdraw 5 silver kro"
 pause 10
 start_script("go2",[6212])
-pause 45
+while running? "go2"
+    echo running?
+    pause 2
+end
 echo "*** done with the bank ***"
 
 put "put clay in my back"
 pause 1
 start_script("go2",[19093])
-pause 60
+while running? "go2"
+    echo running?
+    pause 2
+end
 
 while x < array.size do
     put "rem " + array[x]

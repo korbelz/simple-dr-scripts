@@ -11,11 +11,11 @@
 #  pause 2
 #  x += 1
 #end
- 
-#testing using matchtimeout 1 as a boolean 
+
+#testing using matchtimeout 1 as a boolean
 #cut = matchtimeout 1, "The cutthroat gasps out"
 
-#until cut = false 
+#until cut = false
 #put "slice"
 #pause 10
 #end
@@ -23,7 +23,7 @@
 
 #testing taking multiple user input at once; code works ***
 # variable[1, 2]
-# puts "teach variable[1] to variable[2]" 
+# puts "teach variable[1] to variable[2]"
 # echo variable[1]
 # echo variable[2]
 
@@ -37,7 +37,7 @@
 #i = matchtimeout 1, "mind lock"
 #put "exp twohanded blunt"
 #pause 1
-#echo i 
+#echo i
 
 #check is array is nil; code works***
 #checkpcs
@@ -45,7 +45,7 @@
 #	echo checkpcs.last
 #	pause 2
 #   checkhealth
- 
+
 #	while checkhealth == 100
 #		if checkpcs != nil
 #		echo "the array isn't nil"
@@ -60,9 +60,18 @@
 #		x += 1
 #		checkpcs
 #		echo checkpcs.last
-#        pause 2		
+#        pause 2
 #	end
 
+#running?
+#$running? "test"
+#$Returns: true/false
+#$Description: Takes a string and returns true/false if the given script is active or not.
 
-
-
+#check for travel script running every 2 seconds; code works
+start_script("go2",[6212])
+while running? "go2"
+    echo running?
+    pause 2
+end
+echo "*** rest of script ***"

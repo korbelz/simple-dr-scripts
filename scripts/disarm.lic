@@ -1,20 +1,20 @@
-#comment  
+#comment
 #disarm and pick script
-#chest in right hand 
+#chest in right hand
 
 #box variable is the box you are currently trying to open
 checkright
 box = checkright
-echo box 
+echo box
 pause 2
 
 #uncomment this if you've already disarmed the chest
-goto "pick"
+#goto "pick"
 
 
 id:
 #loop to disarm identify
-until matchtimeout 1, "Somebody has already located" do 
+until matchtimeout 1, "Somebody has already located" do
     echo "disarm start loop"
 	put "disarm id"
 	pause 10
@@ -26,7 +26,7 @@ pause 17
 
 disarm:
 #disarming
-until matchtimeout 1, "Roundtime: 3 sec." 
+until matchtimeout 1, "Roundtime: 3 sec."
 	echo "disarm re-do"
 	pause 1
 	put "disarm "+ box + " careful"
@@ -35,18 +35,18 @@ end
 
 anal:
 #statement to try pre disarm harvest step
-until matchtimeout 1, "you've already analyzed this trap in preparation for harvesting" 
+until matchtimeout 1, "you've already analyzed this trap in preparation for harvesting"
 	echo "disarm analyze start"
 	pause 1
 	put "disarm " + box + " anal"
 	pause 17
-end 
+end
 
 harvest:
-#statement to disarm harvest	
+#statement to disarm harvest
 until matchtimeout 1, "The mangled remnants"
     echo "disarm harvest start"
-	pause 1 
+	pause 1
 	put "disarm " + box + " harvest"
 	pause 17
 	checkleft
@@ -64,15 +64,15 @@ until matchtimeout 1, "Somebody has already" do
 	pause 17
 end
 
-#actual picking loop	
+#actual picking loop
 until matchtimeout 1, "With a soft click" do
 	echo "pick fail"
 	pause 1
 	put "pick " + box + " blind"
 	pause 17
-end	
+end
 put "open "	+ box
-put "look in " + box	
+put "look in " + box
 pause 1
 put "Fill pouch with " + box
 pause 1
@@ -87,9 +87,3 @@ pause 1
 put "app lockpick ring careful"
 pause 16
 put "look in " + box
-	
-	
-
-
-
-

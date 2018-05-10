@@ -1,9 +1,12 @@
 #goes to crossing bank and drops off all coin
-# 
+#
 #end of script goes back to not-so-safe room.
 
 start_script("go2",[1901])
-pause 45
+while running? "go2"
+    echo running?
+    pause 2
+end
 x = 0
 
 multimove "go booth"
@@ -20,5 +23,8 @@ pause 10
 put "bal"
 pause 10
 start_script("go2",[6212])
-pause 45
+while running? "go2"
+    echo running?
+    pause 2
+end
 echo "*** done with the bank ***"

@@ -9,7 +9,10 @@ pause 2
 
 #Travel to mining area
 start_script("go2",[1901])
-pause 45
+while running? "go2"
+    echo running?
+    pause 2
+end
 
 #goto label for debugging
 #goto "refine"

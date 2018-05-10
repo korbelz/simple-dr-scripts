@@ -1,5 +1,5 @@
 #go look in vault, pause for 180 seconds to let player do stuff and leave
-#starts with trip to gem shop, then vault 
+#starts with trip to gem shop, then vault
 #
 #array of gem names currently 39 items, didn't know about %w when I build this array, need to fix
 array = ["chrysoberyl", "spinel", "zircon","sunstone","chrysoprase","crystal","topaz","iolite","aquamarine","kunzite","opal","beryl","onyx","chalcedony","alexandrite","star-stone","diamond","ruby","sapphire","jade","quartz","citrine","tourmaline","morganite","moonstone","diopside","tsavorite","amethyst","lapis lazuli","coral","turquoise","andalusite","carnelian","garnet","ivory","tanzanite","agate","emerald","peridot"]
@@ -7,21 +7,24 @@ array = ["chrysoberyl", "spinel", "zircon","sunstone","chrysoprase","crystal","t
 x = 0
 
 start_script("go2",[733])
-pause 60
-multimove "n", "e", "e", "go shop", "go room" 
+while running? "go2"
+    echo running?
+    pause 2
+end
+multimove "n", "e", "e", "go shop", "go room"
 pause 1
 
 
 while x < array.size
   put "get " + array[x] + " from my pouch"
   pause 1
-  put "sell " + array[x] 
+  put "sell " + array[x]
   pause 1
   x += 1
  end
 
  #runs to bank in crossings as soon as you sell your gems.
-multimove "out", "out", "w", "w", "s" 
+multimove "out", "out", "w", "w", "s"
 pause 1
 start_script("go2",[1901])
 pause 3
@@ -50,7 +53,7 @@ pause 1
 put "go door"
 pause 1
 put "go other arch"
-pause 1 
+pause 1
 put "pull lever"
 pause 1
 put "go door"
@@ -60,7 +63,7 @@ pause 1
 # 3 minutes of vault time before heading back to not so safe room.
 put "look in vault"
 put "look in my back"
-pause 60 
+pause 60
 put "look in vault"
 put "look in my back"
 pause 60
@@ -79,4 +82,7 @@ put "out"
 pause 1
 
 start_script("go2",[6212])
-pause 45
+while running? "go2"
+    echo running?
+    pause 2
+end

@@ -7,10 +7,13 @@ i = matchtimeout 1, "mind lock"
 
 
 start_script("go2",[992])
-pause 90
+while running? "go2"
+    echo running?
+    pause 2
+end
 put "get clay from my back"
 pause 1
-until matchtimeout 1, "mind lock" do   
+until matchtimeout 1, "mind lock" do
 	put "cl gate"
 	pause 12
 	put "stand"
@@ -71,5 +74,8 @@ put "put clay in my back"
 pause 1
 pause 2
 start_script("go2",[6212])
-pause 90
+while running? "go2"
+    echo running?
+    pause 2
+end
 start_script "ebuff1"

@@ -1,19 +1,22 @@
   #comment here
   #touch (user input)
   #cycle heal on the name used in user input
-  
+
 #go to dokt, create array of players in the room
-  
+
   start_script('go2',[6218])
-  pause 10
+  while running? "go2"
+      echo running?
+      pause 2
+  end
 	checkpcs
 	x = 0
 	echo checkpcs.last
 	pause 2
     checkhealth
 #healing text goes here; heals last person in line waits 60 seconds, then heals 1st waits 60 seconds.
-#if hp gets below 99 it leaves and starts healing	
- 
+#if hp gets below 99 it leaves and starts healing
+
 	while checkhealth == 100
 		if checkpcs != nil
 		put "touch " + checkpcs.last
@@ -43,11 +46,14 @@
 		x += 1
 		checkpcs
 		echo checkpcs.last
-        pause 2		
-	end	
+        pause 2
+	end
 	put "accept"
 	put "accept tip"
 	pause 2
 	start_script('go2',[6212])
-	pause 20
+    while running? "go2"
+        echo running?
+        pause 2
+    end
 	start_script "healself"
