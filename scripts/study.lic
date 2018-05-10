@@ -2,112 +2,33 @@
 #study till mind lock
 #This script needs array/better loop added
 
-$i = matchtimeout 1, "mind lock"
+echo "*** will first aid forever ***"
+
+charts = %w[elven kaldar snow rock]
+
+exp = matchtimeout 1, "mind lock"
+x = 0
+a = 0
 
 #stow weapon
 put "put clay in my pack"
-pause 1
+pause 10
 put "get compendium"
 pause 1
 
-until matchtimeout 1, "mind lock" do 
-    put "get compendium"
-    pause 1  
-	put "turn comp to blood dryad"
-	pause 1
-	put "study comp"
-	pause 13
-	put "turn comp to blood nyad"
-	pause 1
-	put "study comp"
-	pause 13
-	put "turn comp to boggle"
-	pause 1
-	put "study comp"
-	pause 13
-	put "turn comp to brocket deer"
-	pause 1
-	put "study comp"
-	pause 13
-	put "turn comp to cougar"
-	pause 1
-	put "study comp"
-	echo "5"
-	pause 13
-	put "turn comp to croff pothanit"
-	pause 1
-	put "study comp"
-	pause 13
-	put "turn comp to dwarven"
-	pause 1
-	put "study comp"
-	pause 13
-	put "turn comp to elothean"
-	pause 1
-	put "study comp"
-	pause 13
-	put "turn comp to elven"
-	pause 1
-	put "study comp"
-	pause 13
-	put "turn comp to equine"
-	pause 1
-	put "study comp"
-	echo 10
-	pause 13
-	put "turn comp to lipo" 
-	pause 1
-	put "study comp"
-	pause 13
-	put "turn comp to grass eel"
-	pause 1
-	put "study comp"
-	pause 13
-	put "turn comp to heggarangi frog"
-	pause 1
-	put "study comp"
-	pause 13
-	put "turn comp to kelpie"
-	pause 1
-	put "study comp"
-	pause 13
-	put "turn comp to rat"
-	pause 1
-	put "study comp"
-	pause 1
-	echo 15
-	pause 13
-	put "turn comp to gob" 
-	pause 1
-	put "study comp"
-	pause 13
-	put "turn comp to silver leucro"
-	pause 1
-	put "study comp"
-	pause 13
-	put "turn comp to striped badger"
-	pause 1
-	put "study comp"
-	pause 13
-	put "turn comp to trollkin"
-	pause 1
-	put "study comp"
-	pause 13
-	put "turn comp to wild boar"
-	pause 1
-	put "study comp"
-	echo "20"
-	pause 13
-	put "put compendium in my pack"
-    pause 1
-	put "exp"
-	pause 48
-	echo $i
+
+while a < charts.size
+  put "turn comp to " + charts[a]
+  pause 1
+  put "study comp"
+  pause 20
+  a += 1
 end
+a -= charts.size
+pause 200
+put "exp first"
+pause 1
 put "put compendium in my pack"
 pause 1
-put "get clay"
-pause 1
-pause 30
 
-start_script "rune"
+start_script('study', [x], force: true)
