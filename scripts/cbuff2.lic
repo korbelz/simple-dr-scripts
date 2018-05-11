@@ -2,13 +2,13 @@
 
 echo "*** will cast buff spells forever ***"
 
-i = matchtimeout 1, "mind lock" 
-array = ["mpp 6", "bless 10", "center 10", "mapp 10", "uncurse 10"]
+i = matchtimeout 1, "mind lock"
+array = ["mpp 6", "bless 10", "center 10", "mapp 10", "uncurse 10", "pfe 10"]
 y = array.size
-x = 0 
-echo y 
+x = 0
+echo y
 
-until matchtimeout 1, "hellisfrozen" do   
+until matchtimeout 1, "hellisfrozen" do
     put "pow"
     pause 10
     put "app arm careful"
@@ -18,16 +18,15 @@ until matchtimeout 1, "hellisfrozen" do
     #number after % should match spells in array.
     put "prep " + array[x % y]
     pause 2
-    put "charge my arm 2"
+    put "charge my arm 3"
     pause 8
     put "invoke my arm"
     pause 16
     put "cast"
-    pause 5 
+    pause 5
     put "wear arm"
-    pause 2	
+    pause 2
     put "exp magic"
     echo i
     x += 1
 end
-
