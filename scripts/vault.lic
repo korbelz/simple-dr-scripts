@@ -2,7 +2,7 @@
 #starts with trip to gem shop, then vault
 #
 #array of gem names currently 39 items, didn't know about %w when I build this array, need to fix
-array = ["chrysoberyl", "spinel", "zircon","sunstone","chrysoprase","crystal","topaz","iolite","aquamarine","kunzite","opal","beryl","onyx","chalcedony","alexandrite","star-stone","diamond","ruby","sapphire","jade","quartz","citrine","tourmaline","morganite","moonstone","diopside","tsavorite","amethyst","lapis lazuli","coral","turquoise","andalusite","carnelian","garnet","ivory","tanzanite","agate","emerald","peridot"]
+array = ["bloodstone", "amber", "chrysoberyl", "spinel", "zircon","sunstone","chrysoprase","crystal","topaz","iolite","aquamarine","kunzite","opal","beryl","onyx","chalcedony","alexandrite","star-stone","diamond","ruby","sapphire","jade","quartz","citrine","tourmaline","morganite","moonstone","diopside","tsavorite","amethyst","lapis lazuli","coral","turquoise","andalusite","carnelian","garnet","ivory","tanzanite","agate","emerald","peridot"]
 #x is used to increment the gem array
 x = 0
 

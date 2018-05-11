@@ -1,0 +1,28 @@
+#loot loop
+#Need to improve the search part of this, maybe using checknpcs
+#
+
+echo "*** looting ***"
+
+search = %w[gob coug leucro bear sil thug ruff cut foot troll og og]
+loot = ["silver coin", "gold coin", "plat coin" ]
+
+#search and loot enemies using search and loot arrays
+a = 0
+while a < search.size
+  put "sea " + search[a]
+  pause 1
+  a += 1
+end
+pause 1
+
+y = 0
+while y < loot.size
+  put "get " + loot[y]
+  pause 1
+  y += 1
+end
+
+put "stow box"
+pause 1
+put "stow gem"
