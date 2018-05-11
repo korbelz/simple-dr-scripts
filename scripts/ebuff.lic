@@ -1,13 +1,13 @@
 #pre-combat buff casting script, also does some app.
 
- 
-  
-i = matchtimeout 1, "mind lock" 
-array = ["bs 20", "ic 10", "mef 10"]
+
+
+i = matchtimeout 1, "mind lock"
+array = ["bs 20", "ic 10", "mef 10", "refresh 10", "gol 10"]
 y = array.size
-x = 0 
-echo y 
-  
+x = 0
+echo y
+
 checkhealth
 put "pow"
 pause 10
@@ -18,17 +18,17 @@ pause 2
 while x < y do
     put "prep " + array[x]
 	pause 2
-	put "charge my arm 5"
+	put "charge my arm 10"
 	pause 8
 	put "invoke my arm"
 	pause 16
 	put "cast"
-	pause 5 
+	pause 5
 	x += 1
 	echo x
 end
 put "wear arm"
-pause 2	
+pause 2
 put "exp magic"
 pause 2
 put "pow"
@@ -36,4 +36,3 @@ pause 10
 put "app arm careful"
 pause 17
 start_script "healself"
-
