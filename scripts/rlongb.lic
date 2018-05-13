@@ -69,34 +69,13 @@ put "arr for skin"
 pause 3
 put "skin"
 pause 3
-#search and loot all possible enemies in this section using sea and loot array
-a = 0
-while a < sea.size
-  put "sea " + sea[a]
-  pause 1
-  a += 1
+
+start_script "loot"
+while running? "loot"
+    echo running?
+    pause 2
 end
-pause 1
-y = 0
-while y < loot.size
-  put "get " + loot[y]
-  pause 1
-  y += 1
-end
-put "stow box"
-put "stow gem"
-b = 0
-put "look"
-pause 2
-echo arr
-pause 1
-while b < 7
-	put "get c arrow"
-    pause 1
-    put "put c arrow in my qui"
-    pause 1
-	b += 1
-end
+
 pause 1
 put "exp bow"
 i = matchtimeout 1, "nearly locked"

@@ -20,6 +20,8 @@ pause 2
 put "wear leathers"
 pause 6
 
+timer = Time.now.to_i
+echo timer
 #TEST matchtimeout 1, "appears dead"; code works
 until matchtimeout 1, "appears dead" do
 	put "hunt"
@@ -37,6 +39,14 @@ until matchtimeout 1, "appears dead" do
 	put "look"
 	echo dead
 end
+timer2 = Time.now.to_i
+echo timer2
+total = timer2 - timer
+echo total
+#write to file; working
+f = File.new("time_data.txt", 'a+')
+f.write total.to_s + "\n"
+f.close
 put "get clay from my back"
 pause 2
 put "arr for skin"
@@ -51,21 +61,12 @@ put "arr for skin"
 pause 3
 put "skin"
 pause 3
-#search and loot all possible enemies in this section using sea and loot array
-a = 0
-while a < sea.size
-  put "sea " + sea[a]
-  pause 1
-  a += 1
+
+start_script "loot"
+while running? "loot"
+    echo running?
+    pause 2
 end
-pause 1
-y = 0
-while y < loot.size
-  put "get " + loot[y]
-  pause 1
-  y += 1
-end
-put "stow box"
-put "stow gem"
+
 #restart script using swim3 start_script set up.
 start_script('rhunt', [dead], force: true)
