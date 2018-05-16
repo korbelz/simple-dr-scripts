@@ -5,6 +5,11 @@
 #must start at room 773, need to add a go2 at start to stop errors.
 x = 0
 lockpick = 6
+start_script("go2",[733])
+while running? "go2"
+    echo running?
+    pause 2
+end
 multimove "w","w","w","w","w","w","n","n","go door"
 
 while x <= lockpick
@@ -15,9 +20,14 @@ while x <= lockpick
   put "offer 125"
   pause 1
   put "put lockpick on my lockpick ring"
-  pause 1 
+  pause 1
   x += 1
  end
- 
+
  multimove "out","s","s","e","e","e","e","e"
  echo "done buying picks masta"
+ start_script("go2",[6212])
+ while running? "go2"
+     echo running?
+     pause 2
+ end
