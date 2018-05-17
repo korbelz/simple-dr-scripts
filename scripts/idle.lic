@@ -3,9 +3,11 @@
 
 i = matchtimeout 1, "vimforever"
 
-until matchtimeout 1, "vimforever" do   
-	waitfor("YOU HAVE BEEN IDLE TOO LONG. PLEASE RESPOND.")
+until matchtimeout 1, "vimforever" do
 	put "exp"
-	pause 180
+	if checkhealth < 80
+		start_script("go2",[6212])
+	end
+	pause 120
 	echo i
 end

@@ -4,6 +4,9 @@
 
 echo "*** Type disarm pick if box is already disarmed ***"
 
+put "prep hol 30"
+pause 25
+put "cast"
 
 #box variable is the box you are currently trying to open
 checkright
@@ -16,8 +19,7 @@ variable[1]
 if variable[1] == "pick"
     goto "pick"
 end
-#uncomment this if you've already disarmed the chest
-#goto "pick"
+
 
 
 id:
