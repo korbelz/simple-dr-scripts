@@ -5,7 +5,6 @@
 #TODO planting sirese seed
 #TODO almsbox testing
 #TODO clean altars
-#TODO Kiss altars
 #TODO Wine on altars
 #TODO meditate test
 #TODO Refill crossing temple bath
@@ -66,6 +65,24 @@ put "dance"
 pause 16
 put "dance"
 pause 16
+put "kneel"
+pause 1
+put "kiss heavy alt"
+pause 1
+put "stand"
+pause 1
+put "get cloth from my back"
+pause 2
+put "rem zil"
+pause 2
+put "clean my zil with my cloth"
+pause 16
+put "wear zil"
+pause 2
+put "put my cloth in my back"
+pause 2
+put "play " + song[0] + " " + style[1]
+pause 150
 start_script("go2",[5988])
 while running? "go2"
     echo running?
