@@ -2,12 +2,20 @@
 #disarm and pick script
 #chest in right hand
 
+echo "*** Type disarm pick if box is already disarmed ***"
+
+
 #box variable is the box you are currently trying to open
 checkright
 box = checkright
 echo box
 pause 2
 
+#having pick as an argument will force script to jump to picking section
+variable[1]
+if variable[1] == "pick"
+    goto "pick"
+end
 #uncomment this if you've already disarmed the chest
 #goto "pick"
 
