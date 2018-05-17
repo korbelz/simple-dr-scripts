@@ -1,6 +1,7 @@
 #comment
 #Script to kill things
 #hunt using claymore
+#TODO Add health check to combat loop; break out to saferoom.
 
 sea = %w[gob coug leucro bear sil thug ruff cut foot troll og og]
 loot = ["silver coin", "gold coin", "plat coin"]
@@ -39,6 +40,8 @@ until matchtimeout 1, "appears dead" do
 	put "look"
 	echo dead
 end
+
+#saving time to kill to a file for later use. 
 timer2 = Time.now.to_i
 echo timer2
 total = timer2 - timer
@@ -47,6 +50,8 @@ echo total
 f = File.new("time_data.txt", 'a+')
 f.write total.to_s + "\n"
 f.close
+
+#skinning, need to breakout this logic to own script and improve it.
 put "get clay from my back"
 pause 2
 put "arr for skin"
