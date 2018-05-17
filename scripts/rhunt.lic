@@ -41,7 +41,7 @@ until matchtimeout 1, "appears dead" do
 	echo dead
 end
 
-#saving time to kill to a file for later use. 
+#saving time to kill to a file for later use.
 timer2 = Time.now.to_i
 echo timer2
 total = timer2 - timer
@@ -51,21 +51,12 @@ f = File.new("time_data.txt", 'a+')
 f.write total.to_s + "\n"
 f.close
 
-#skinning, need to breakout this logic to own script and improve it.
-put "get clay from my back"
-pause 2
-put "arr for skin"
-pause 3
-put "arr for skin"
-pause 3
-put "arr for skin"
-pause 3
-put "arr for skin"
-pause 3
-put "arr for skin"
-pause 3
-put "skin"
-pause 3
+variable[1]
+start_script("skin",[variable[1]])
+while running? "skin"
+    echo running?
+    pause 2
+end
 
 start_script "loot"
 while running? "loot"

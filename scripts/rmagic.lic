@@ -6,7 +6,7 @@ loot = ["silver coin", "gold coin", "plat coin"]
 dead = matchtimeout 1, "appears dead"
 exp = matchtimeout 1, "mind lock"
 
-array = ["df 6", "devi 17", "ec 19","stamp 12","griz 11"]
+array = ["df 7", "devi 17", "ec 20","stamp 15","griz 14"]
 y = array.size
 x = 0
 
@@ -26,22 +26,13 @@ until matchtimeout 1, "appears dead" do
 	x += 1
 	echo dead
 end
-put "wear Longb"
-pause 2
-put "get clay from my back"
-pause 2
-put "arr for skin"
-pause 3
-put "arr for skin"
-pause 3
-put "arr for skin"
-pause 3
-put "arr for skin"
-pause 3
-put "arr for skin"
-pause 3
-put "skin"
-pause 3
+
+variable[1]
+start_script("skin",[variable[1]])
+while running? "skin"
+    echo running?
+    pause 2
+end
 
 start_script "loot"
 while running? "loot"
@@ -49,4 +40,4 @@ while running? "loot"
     pause 2
 end
 
-start_script('rmagic', [x], force: true)
+start_script('rmagic', [variable[1]], force: true)

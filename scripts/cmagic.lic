@@ -8,7 +8,7 @@ loot = ["silver coin", "gold coin", "plat coin" ]
 dead = matchtimeout 1, "appears dead"
 exp = matchtimeout 1, "mind lock"
 
-array = ["ff 5", "horn 5", "sb 5","sick 5","maled 5","sa 6"]
+array = ["ff 6", "horn 6", "sb 5","sick 5","maled 5","sa 6"]
 y = array.size
 x = 0
 
@@ -29,22 +29,13 @@ until matchtimeout 1, "appears dead" do
 	x += 1
 	echo dead
 end
-put "wear Longb"
-pause 2
-put "get clay from my back"
-pause 2
-put "arr for skin"
-pause 3
-put "arr for skin"
-pause 3
-put "arr for skin"
-pause 3
-put "arr for skin"
-pause 3
-put "arr for skin"
-pause 3
-put "skin"
-pause 3
+
+variable[1]
+start_script("skin",[variable[1]])
+while running? "skin"
+    echo running?
+    pause 2
+end
 
 start_script "loot"
 while running? "loot"

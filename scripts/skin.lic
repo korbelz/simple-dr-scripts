@@ -1,23 +1,28 @@
 # standalone script that just does skinning when you are manually hunting.
 
+checkright
+right = checkright
 
-put "wear Longb"
-pause 2
-put "put flail in my back"
-pause 2
+variable[1]
+if variable[1] == nil
+    variable[1] = "skin"
+end
+
+put "wear " + right
+pause 0.5
+put "put " + right + " in my back"
+pause 0.5
 put "get clay from my back"
-pause 2
-put "arr for skin"
+pause 0.5
+put "arr for " + variable[1]
 pause 3
-put "arr for skin"
+put "arr for " + variable[1]
 pause 3
-put "arr for skin"
+put "arr for " + variable[1]
 pause 3
-put "arr for skin"
+put "arr for " + variable[1]
 pause 3
-put "arr for skin"
+put "arr for " + variable[1]
 pause 3
 put "skin"
 pause 3
-put "sea bear"
-pause 2
