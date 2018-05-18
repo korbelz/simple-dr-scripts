@@ -64,5 +64,5 @@ while running? "loot"
     pause 2
 end
 
-#restart script using swim3 start_script set up.
-start_script('rhunt', [dead], force: true)
+
+start_script('rhunt', [variable[1]], force: true)
