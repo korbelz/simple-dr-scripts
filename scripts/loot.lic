@@ -11,7 +11,7 @@ loot = ["silver coin", "gold coin", "plat coin" ]
 a = 0
 while a < search.size
   put "sea " + search[a]
-  pause 1
+  pause 0.5
   a += 1
 end
 pause 1
@@ -24,5 +24,7 @@ while y < loot.size
 end
 
 put "stow box"
+pause 1
+put "stow gem"
 pause 1
 put "stow gem"
