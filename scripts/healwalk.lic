@@ -1,0 +1,22 @@
+#goes to crossing bank and drops off all coin
+#
+#end of script goes back to not-so-safe room.
+
+
+rooms = %w[6212 6218 1544 5713 992 851 19093 732 4652]
+y = rooms.size
+x = 0
+
+
+
+while x < y
+    start_script("go2",[rooms[x]])
+    pause 30
+    put "per heal"
+    pause 10
+    x += 1
+end
+x -= y
+
+
+echo "*** done with the walking ***"
