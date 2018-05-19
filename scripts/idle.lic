@@ -8,6 +8,9 @@ until matchtimeout 1, "vimforever" do
 	if checkhealth < 80
 		start_script("go2",[6212])
 	end
+	if checkspirit < 80
+		start_script("go2",[6212])
+	end
 	pause 120
 	echo i
 end
