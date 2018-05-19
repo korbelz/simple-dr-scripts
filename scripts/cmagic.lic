@@ -43,4 +43,4 @@ while running? "loot"
     pause 2
 end
 
-start_script('cmagic', [x], force: true)
+start_script('cmagic', [variable[1]], force: true)

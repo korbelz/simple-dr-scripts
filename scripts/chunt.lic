@@ -52,4 +52,4 @@ while running? "loot"
 end
 
 #restart script using swim3 start_script set up.
-start_script('chunt', [dead], force: true)
+start_script('chunt', [variable[1]], force: true)
