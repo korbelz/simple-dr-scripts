@@ -3,24 +3,24 @@
 
 echo "*** will play zills till mind locked ***"
 
-i = matchtimeout 1, "mind lock" 
+i = matchtimeout 1, "mind lock"
 song = ["ditty", "folk", "march", "jig", "hymn", "battle", "minuet","dirge", "requiem", ]
 style = ["halting", "confident", "masterful"]
- 
+
 put "get cloth from my back"
 pause 2
-put "rem zil" 
+put "rem zil"
 pause 2
 put "clean my zil with my cloth"
 pause 16
-put "wear zil" 
+put "wear zil"
 pause 2
-put "put my cloth in my back" 
+put "put my cloth in my back"
 pause 2
 
-until matchtimeout 1, "mind lock" do   
+until matchtimeout 1, "mind lock" do
     #
-    put "play " + song[0] + " " + style[0]
+    put "play " + song[1] + " " + style[1]
     pause 200
     put "exp perform"
     echo i

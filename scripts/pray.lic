@@ -81,7 +81,7 @@ put "wear zil"
 pause 2
 put "put my cloth in my back"
 pause 2
-put "play " + song[0] + " " + style[1]
+put "play " + song[1] + " " + style[1]
 pause 150
 start_script("go2",[5988])
 while running? "go2"

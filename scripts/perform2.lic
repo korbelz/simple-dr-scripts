@@ -21,7 +21,7 @@ pause 2
 
 until matchtimeout 1, "hellisfrozen" do
     #
-    put "play " + song[0] + " " + style[1]
+    put "play " + song[1] + " " + style[1]
     pause 200
     put "exp perform"
     echo i
