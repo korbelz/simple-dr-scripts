@@ -1,10 +1,9 @@
 #comment here
 #touch (user input)
 
-
+echo "*** touch player name ***"
 
  put "touch " + variable[1]
  pause 2
  put "take " + variable[1] + " all quick"
  pause 30
- 

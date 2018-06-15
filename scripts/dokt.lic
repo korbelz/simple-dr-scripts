@@ -6,12 +6,18 @@ a = 0
 b = 0
 c = 0
 d = 0
-cycle = 0  
+cycle = 0
 
-until matchtimeout 1, " just arrived" do   
+start_script("go2",[6218])
+while running? "go2"
+    echo running?
+    pause 2
+end
+
+
+until matchtimeout 1, " just arrived" do
 	pause 60
 	echo i
 end
 
-start_script "touch"
-
+#start_script "touch"
