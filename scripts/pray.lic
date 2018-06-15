@@ -101,7 +101,7 @@ put "pray asketi"
 pause 15
 while c < 4 do
     #
-    put "play " + song[0] + " " + style[0]
+    put "play " + song[1] + " " + style[1]
     pause 200
     put "exp perform"
     c += 1
