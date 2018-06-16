@@ -55,7 +55,7 @@ end
 put "Dump junk"
 while c < 2 do
     #
-    put "play " + song[0] + " " + style[0]
+    put "play " + song[1] + " " + style[1]
     pause 150
     put "exp perform"
     c += 1
