@@ -23,7 +23,7 @@ pause 2
 until matchtimeout 1, "appears dead" do
 	put "hunt"
 	pause 10
-	put "load my longb"
+	put "load my sling"
 	pause 8
 	put "ret"
 	pause 3
@@ -65,7 +65,7 @@ while running? "loot"
     pause 2
 end
 
-while x < 6 do
+while x < 10 do
 	put "get rock"
 	pause 1
 	put "put rock in my qui"
