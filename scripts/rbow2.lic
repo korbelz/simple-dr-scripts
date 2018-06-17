@@ -2,6 +2,7 @@
 #comment
 #Script to kill things
 
+echo "*** will train bow skill forever ***"
 
 sea = %w[gob coug leucro bear sil thug ruff cut foot troll og og]
 loot = ["silver coin", "gold coin", "plat coin"]
@@ -66,6 +67,15 @@ while running? "loot"
     echo running?
     pause 2
 end
+
+while x < 6 do
+	put "get arrow"
+	pause 1
+	put "put arrow in my qui"
+	pause 1
+	x += 1
+end
+x -= 6
 
 pause 1
 put "exp bow"
