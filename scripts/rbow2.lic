@@ -80,4 +80,4 @@ x -= 6
 pause 1
 put "exp bow"
 # This will loop forever and EVER
-start_script('rbow2', [x], force: true)
+start_script('rbow2', [variable[1]], force: true)

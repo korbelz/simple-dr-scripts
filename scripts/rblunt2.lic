@@ -53,4 +53,4 @@ end
 
 
 # This will loop forever and EVER
-start_script('rblunt2', [x], force: true)
+start_script('rblunt2', [variable[1]], force: true)
