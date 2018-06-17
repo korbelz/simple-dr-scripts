@@ -1,16 +1,20 @@
-#buy 6 ordinary lockpicks at crossing shop and put them on lockpick ring
+#buy ordinary lockpicks at crossing shop and put them on lockpick ring
 #
 #
 #change variable "lockpick"  to increase number of lockpicks to buy
-#must start at room 773, need to add a go2 at start to stop errors.
+#change last goto script for your not-so-safe room.
+
+
 x = 0
 lockpick = 6
-start_script("go2",[733])
+
+
+start_script("go2",[19125])
 while running? "go2"
     echo running?
     pause 2
 end
-multimove "w","w","w","w","w","w","n","n","go door"
+
 
 while x <= lockpick
   echo x
@@ -24,7 +28,7 @@ while x <= lockpick
   x += 1
  end
 
- multimove "out","s","s","e","e","e","e","e"
+#go home code
  echo "done buying picks masta"
  start_script("go2",[6212])
  while running? "go2"
