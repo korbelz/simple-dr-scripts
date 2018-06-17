@@ -17,7 +17,7 @@ put "put flail in my back"
 pause 2
 put "rem longb"
 pause 2
-put "prep stw 20"
+put "prep stw 35"
 pause 20
 put "cast"
 pause 2

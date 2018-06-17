@@ -5,7 +5,23 @@
 echo "*** use favor2 if you dont have enough xp to fill orb***"
 pause 10
 
-#goto crossing shop
+#anti theif
+start_script("go2",[1901])
+while running? "go2"
+    echo running?
+    pause 2
+end
+
+put "go win"
+pause 1
+put "dep all"
+pause 10
+put "bal"
+pause 10
+put "withdraw 5 silver kro"
+pause 10
+
+#goto crossing shop and buy item for favor
 start_script("go2",[8265])
 while running? "go2"
     echo running?
