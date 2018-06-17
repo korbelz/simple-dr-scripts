@@ -56,6 +56,6 @@ while running? "loot"
 end
 
 
-start_script "rlongb"
+start_script "rbow"
 #placeholder code that does a force restart of same script
 #start_script('magic', [x], force: true)
