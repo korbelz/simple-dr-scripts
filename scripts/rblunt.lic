@@ -1,12 +1,8 @@
 #comment
 #Script to kill things
 
-dead = matchtimeout 1, "A silver-backed bear growls one last time and collapses."
+echo "*** will kill once with blunt skill then change skills ***"
 
-
-
-sea = %w[gob coug leucro bear sil thug ruff cut foot troll og og]
-loot = ["silver coin", "gold coin", "plat coin"]
 dead = matchtimeout 1, "appears dead"
 exp = matchtimeout 1, "mind lock"
 
@@ -56,6 +52,6 @@ while running? "loot"
 end
 
 
-start_script "rbow"
+start_script "rsling"
 #placeholder code that does a force restart of same script
 #start_script('magic', [x], force: true)

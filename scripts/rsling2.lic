@@ -2,7 +2,7 @@
 #comment
 #Script to kill things
 
-echo "*** will kill once with bow skill then change skills ***"
+echo "*** will train sling skill forever ***"
 
 dead = matchtimeout 1, "appears dead"
 exp = matchtimeout 1, "mind lock"
@@ -14,7 +14,7 @@ put "put clay in my back"
 pause 2
 put "put flail in my back"
 pause 2
-put "rem longb"
+put "rem sling"
 pause 2
 put "prep stw 35"
 pause 20
@@ -39,10 +39,9 @@ until matchtimeout 1, "appears dead" do
 	pause 3
 	put "ret"
 	pause 3
-	put "get arrow"
+	put "get rock"
 	pause 1
-	pause 1
-	put "put my arrow in qui"
+	put "put rock in my qui"
 	pause 1
 	put "hi"
 	pause 7
@@ -67,14 +66,15 @@ while running? "loot"
 end
 
 while x < 6 do
-	put "get arrow"
+	put "get rock"
 	pause 1
-	put "put arrow in my qui"
+	put "put rock in my qui"
 	pause 1
 	x += 1
 end
 x -= 6
 
 pause 1
-
-start_script "rblunt"
+put "exp sling"
+# This will loop forever and EVER
+start_script('rsling2', [variable[1]], force: true)
