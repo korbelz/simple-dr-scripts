@@ -1,14 +1,14 @@
   #comment here
-  
 
-  
-  
+
+
+  #array currently isn't used anymore but I left it. 
 	array = ["head", "right eye", "left eye","neck","chest", "abdomen", "back","right arm","left arm","right hand","left hand","right leg", "left leg","skin","tail"]
 	x = 0
 	echo x
 	pause 5
-	
- 
+
+
 	put "pow"
 	pause 10
 	put "per health"
@@ -24,24 +24,24 @@
 		pause 8
 		put "invoke my arm"
 		pause 15
-		put "cast " 
+		put "cast "
 		pause 120
-		x += 1	
+		x += 1
 	end
 	pause 5
-	
-	
-	
-	
+
+
+
+
 	put "pow"
 	pause 10
 	put "per health"
 	pause 12
 	put "per health self"
 	pause 12
-	
 
-	
+
+
 	#comment here
 	while x < 4 do
 		put "prep heal 20"
@@ -50,11 +50,11 @@
 		pause 8
 		put "invoke my arm"
 		pause 15
-		put "cast " 
+		put "cast "
 		pause 120
 		x += 1
 	end
-	
+
 	put "wear arm"
 	pause 2
 	put "pow"
@@ -67,12 +67,9 @@
 	pause 2
 	echo checkhealth
 	pause 2
-	if checkhealth > 99 
+	if checkhealth > 99
 		start_script "ebuff"
 		pause 2
 		elsif
 		start_script('healself', [checkhealth], force:true)
 	end
-	
-	
-	

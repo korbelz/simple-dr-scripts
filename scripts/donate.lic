@@ -1,10 +1,15 @@
 #walk around looking at donation shelves in the crossings
 
+x = 0
+
 #Ranger donation rack; might need to increase first pause if you live far away from town
 start_script("go2",[13213])
 while running? "go2"
     echo running?
-    pause 2
+    pause 5
+    x += 1
+    echo x
+    break if x > 10
 end
 put "look on rack"
 pause 60
@@ -13,7 +18,7 @@ pause 60
 start_script("go2",[5990])
 while running? "go2"
     echo running?
-    pause 2
+    pause 5
 end
 put "look in chest"
 pause 60
@@ -22,7 +27,7 @@ pause 60
 start_script("go2",[5992])
 while running? "go2"
     echo running?
-    pause 2
+    pause 5
 end
 put "look on shelf"
 pause 60
@@ -31,7 +36,7 @@ pause 60
 start_script("go2",[7890])
 while running? "go2"
     echo running?
-    pause 2
+    pause 5
 end
 put "look on rack"
 pause 60
@@ -40,7 +45,13 @@ pause 60
 start_script("go2",[1901])
 while running? "go2"
     echo running?
-    pause 2
-end	
+    pause 5
+end
 put "look on table"
 pause 60
+
+start_script("go2",[6212])
+while running? "go2"
+    echo running?
+    pause 2
+end
