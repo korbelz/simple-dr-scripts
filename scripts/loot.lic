@@ -4,7 +4,7 @@
 
 echo "*** looting ***"
 
-search = %w[gob coug leucro bear sil thug ruff cut foot troll og og]
+search = %w[gob coug leucro bear sil thug ruff cut foot troll wolf og]
 loot = ["silver coin", "gold coin", "plat coin" ]
 
 #search and loot enemies using search and loot arrays

@@ -11,6 +11,7 @@ while running? "go2"
     echo x
     break if x > 10
 end
+kill_script "go2"
 put "look on rack"
 pause 60
 
