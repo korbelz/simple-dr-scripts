@@ -27,6 +27,18 @@
 # echo variable[1]
 # echo variable[2]
 
+#User input "disarm pick" to jump to pick label; code works
+#variable[1]
+#if variable[1] == "pick"
+#    goto "pick"
+#end
+
+#Getting a variable to default to skin when no input is given; working
+#variable[1]
+#if variable[1] == nil
+#    variable[1] = "skin"
+#end
+
 #checkhealth
 #pause 2
 #echo checkhealth
@@ -69,9 +81,53 @@
 #$Description: Takes a string and returns true/false if the given script is active or not.
 
 #check for travel script running every 2 seconds; code works
-start_script("go2",[6212])
-while running? "go2"
-    echo running?
-    pause 2
-end
-echo "*** rest of script ***"
+#start_script("go2",[6212])
+#while running? "go2"
+#    echo running?
+#    pause 2
+#end
+#echo "*** rest of script ***"
+
+
+#Timestamp; working
+#timer = Time.now.to_i
+#echo timer
+#pause 5
+#timer2 = Time.now.to_i
+#echo timer2
+#total = timer2 - timer
+#echo total
+#write to file; working
+##f.write total.to_s + "\n"
+#f.close
+
+#variable[1]
+#start_script("skin",[variable[1]])
+#while running? "skin"
+    #echo running?
+    #pause 2
+#end
+
+#waitfor("YOU HAVE BEEN IDLE TOO LONG. PLEASE RESPOND.")
+
+#Run back to safe room if health below 80; code works
+#if checkhealth < 80
+#    start_script("go2",[6212])
+#end
+
+#regex example?
+#case line
+ #when /^You catch (.*) making a grab for your pockets!$/
+ #  thief = Regexp.last_match(1)
+ #  echo "***EXITING, CAUGHT #{thief} TRYING TO STEAL***"
+ #  fput('exit')
+
+#x = 0
+#while x < 6 do
+#     put "get arrow"
+#     pause 1
+#     put "put arrow in my qui"
+#     pause 1
+#     x += 1
+#end
+#x -= 6

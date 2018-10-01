@@ -25,7 +25,7 @@ while a < charts.size
   a += 1
 end
 a -= charts.size
-pause 200
+pause 300
 put "exp first"
 pause 1
 put "put compendium in my pack"

@@ -1,0 +1,18 @@
+#Script to raise Perception and Outdoorsmanship
+#will run forever
+
+echo "*** Kick rocks forever ***"
+pause 10
+
+
+until matchtimeout 1, "hellfrozen" do   
+	put "collect rock"
+    pause 16
+	put "kick rock"
+	pause 2
+	put "exp outdoors"
+	pause 10
+end
+
+
+

@@ -3,6 +3,10 @@
 #swims the river to riverhaven
 # min skill is 170ish, trains till 350
 #
+
+echo "*** Flow: ccollect -> this -> cswim2 ***"
+pause 10
+
 i = matchtimeout 1, "mind lock"
 
 

@@ -5,6 +5,9 @@ i = 0
 a = 0
 b = 0
 
+echo "*** Flow: cbuff1 -> this -> ccollect ***"
+pause 10
+
 #need better weapon stow section, hands need to be clear.
 put "put clay in my back"
 pause 1

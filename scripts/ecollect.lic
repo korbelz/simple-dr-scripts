@@ -1,6 +1,9 @@
 #Script to raise Perception and Outdoorsmanship
 #once mind locked script moves to Swim2.
 
+echo "*** Flow: emech -> this -> eswim2 ***"
+pause 10
+
 i = matchtimeout 1, "mind lock"
 
 until matchtimeout 1, "mind lock" do   
