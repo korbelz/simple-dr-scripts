@@ -24,6 +24,8 @@ pause 2
 until matchtimeout 1, "appears dead" do
 	put "hunt"
 	pause 10
+	put "stalk"
+	pause 6
 	put "load my longb"
 	pause 8
 	put "ret"
@@ -47,8 +49,6 @@ until matchtimeout 1, "appears dead" do
 	pause 1
 	put "hi"
 	pause 7
-	put "stalk"
-	pause 6
 	put "look"
 	pause 1
 	echo dead
@@ -67,14 +67,14 @@ while running? "loot"
     pause 2
 end
 
-while x < 6 do
+while x < 9 do
 	put "get arrow"
-	pause 1
+	pause 0.5
 	put "put arrow in my qui"
-	pause 1
+	pause 0.5
 	x += 1
 end
-x -= 6
+x -= 9
 
 pause 1
 put "exp bow"

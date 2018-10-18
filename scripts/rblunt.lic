@@ -2,6 +2,7 @@
 #Script to kill things
 
 echo "*** will kill once with blunt skill then change skills ***"
+echo "*** next skill is sling ***"
 
 dead = matchtimeout 1, "appears dead"
 exp = matchtimeout 1, "mind lock"

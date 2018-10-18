@@ -1,5 +1,6 @@
 #Combat spell script
 
+echo "*** will train magic skill forever ***"
 
 sea = %w[gob coug leucro bear sil thug ruff cut foot troll og og]
 loot = ["silver coin", "gold coin", "plat coin"]

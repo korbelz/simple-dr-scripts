@@ -23,6 +23,8 @@ pause 2
 until matchtimeout 1, "appears dead" do
 	put "hunt"
 	pause 10
+	put "stalk"
+	pause 6
 	put "load my sling"
 	pause 8
 	put "ret"
@@ -45,8 +47,6 @@ until matchtimeout 1, "appears dead" do
 	pause 1
 	put "hi"
 	pause 7
-	put "stalk"
-	pause 6
 	put "look"
 	pause 1
 	echo dead
@@ -65,14 +65,14 @@ while running? "loot"
     pause 2
 end
 
-while x < 10 do
+while x < 15 do
 	put "get rock"
-	pause 1
+	pause 0.5
 	put "put rock in my qui"
-	pause 1
+	pause 0.5
 	x += 1
 end
-x -= 10
+x -= 15
 
 pause 1
 put "exp sling"

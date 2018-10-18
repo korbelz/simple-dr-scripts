@@ -3,6 +3,7 @@
 #Script to kill things
 
 echo "*** will kill once with sling skill then change skills ***"
+echo "*** next skill is bow ***"
 
 
 dead = matchtimeout 1, "appears dead"
@@ -24,6 +25,8 @@ pause 2
 until matchtimeout 1, "appears dead" do
 	put "hunt"
 	pause 10
+	put "stalk"
+	pause 6
 	put "load my sling"
 	pause 8
 	put "ret"
@@ -47,8 +50,6 @@ until matchtimeout 1, "appears dead" do
 	pause 1
 	put "hi"
 	pause 7
-	put "stalk"
-	pause 6
 	put "look"
 	pause 1
 	echo dead
