@@ -54,9 +54,13 @@ pause 1
 put "go win"
 pause 1
 put "dep all"
-pause 10
-put "bal"
-pause 10
+pause 5
+start_script("cash")
+while running? "cash"
+    echo running?
+    pause 2
+end
+pause 1
 put "withdraw 5 silver kro"
 pause 10
 start_script("go2",[1539])

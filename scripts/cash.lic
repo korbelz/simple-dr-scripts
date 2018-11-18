@@ -1,0 +1,21 @@
+#comments here
+# This script will check balance and write it to a file
+#
+#
+
+echo "*** Will check balance and write it to a file ***"
+
+put "bal"
+pause 1 
+cash = matchfind "it looks like your current balance is ? platinum"
+pause 1 
+echo "#{cash}"
+#write to file; working
+f = File.new("cashmoney.txt", 'a+')
+f.write cash + "\n"
+f.close
+pause 1
+kill_script "cash"
+
+
+

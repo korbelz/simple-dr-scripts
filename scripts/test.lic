@@ -116,11 +116,17 @@
 #end
 
 #regex example?
-#case line
- #when /^You catch (.*) making a grab for your pockets!$/
- #  thief = Regexp.last_match(1)
- #  echo "***EXITING, CAUGHT #{thief} TRYING TO STEAL***"
- #  fput('exit')
+put "bal"
+pause 1 
+cash = matchfind "it looks like your current balance is ? platinum"
+pause 1 
+echo "#{cash}"
+#write to file; working
+f = File.new("cashmoney.txt", 'a+')
+f.write cash + "\n"
+f.close
+
+
 
 #x = 0
 #while x < 6 do

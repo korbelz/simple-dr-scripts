@@ -1,0 +1,15 @@
+#comments here
+# This script will check balance and read it from a file
+#
+#
+
+echo "*** Will check balance and read it from a file ***"
+
+#read from a file; working
+f = File.open("cashmoney.txt")
+line = f.readlines
+len = line.last
+echo "Current balance is #{len} platinum coins"
+f.close
+
+
