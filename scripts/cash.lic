@@ -10,9 +10,19 @@ pause 1
 cash = matchfind "it looks like your current balance is ? platinum"
 pause 1 
 echo "#{cash}"
+
+put "exp all"
+pause 1 
+ranks = matchfind "Total Ranks Displayed: ?"
+pause 1 
+echo "#{ranks}"
+
+timer = Time.now.strftime "%Y-%m-%d"
+echo "#{timer}"
+
 #write to file; working
 f = File.new("cashmoney.txt", 'a+')
-f.write cash + "\n"
+f.write timer + cash + ranks + "\n"
 f.close
 pause 1
 kill_script "cash"

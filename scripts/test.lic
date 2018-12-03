@@ -116,15 +116,15 @@
 #end
 
 #regex example?
-put "bal"
-pause 1 
-cash = matchfind "it looks like your current balance is ? platinum"
-pause 1 
-echo "#{cash}"
+#put "bal"
+#pause 1 
+#cash = matchfind "it looks like your current balance is ? platinum"
+#pause 1 
+#echo "#{cash}"
 #write to file; working
-f = File.new("cashmoney.txt", 'a+')
-f.write cash + "\n"
-f.close
+#f = File.new("cashmoney.txt", 'a+')
+#f.write cash + "\n"
+#f.close
 
 
 
@@ -137,3 +137,12 @@ f.close
 #     x += 1
 #end
 #x -= 6
+
+#put "exp all"
+#pause 1 
+#ranks = matchfind "Total Ranks Displayed: ?"
+#pause 1 
+#echo "#{ranks}"
+
+timer = Time.now.strftime "%Y-%m-%d"
+echo "#{timer}"
