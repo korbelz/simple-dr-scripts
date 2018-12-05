@@ -9,6 +9,8 @@ exp = matchtimeout 1, "mind lock"
 
 x = 0
 
+put "stance parry"
+pause 1
 put "put clay in my back"
 pause 2
 put "get flail from my back"

@@ -22,7 +22,7 @@ echo "#{timer}"
 
 #write to file; working
 f = File.new("cashmoney.txt", 'a+')
-f.write timer + cash + ranks + "\n"
+f.write timer + "," + cash + "," + ranks + "\n"
 f.close
 pause 1
 kill_script "cash"

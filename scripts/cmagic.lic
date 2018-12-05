@@ -12,6 +12,8 @@ array = ["ff 6", "horn 6", "sb 5","sick 5","maled 5"]
 y = array.size
 x = 0
 
+put "stance parry"
+pause 1
 until matchtimeout 1, "appears dead" do
 	pause 2
 	put "hunt"

@@ -12,6 +12,8 @@ arr = matchtimeout 1, "arrow"
 
 x = 0
 
+put "stance shield"
+pause 1
 put "put clay in my back"
 pause 2
 put "put flail in my back"

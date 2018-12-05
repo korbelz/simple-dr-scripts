@@ -11,6 +11,8 @@ array = ["df 7", "devi 17", "ec 20","stamp 15","griz 14"]
 y = array.size
 x = 0
 
+put "stance parry"
+pause 1
 until matchtimeout 1, "appears dead" do
 	pause 2
 	put "hunt"
