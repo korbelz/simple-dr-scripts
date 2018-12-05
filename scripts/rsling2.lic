@@ -10,12 +10,20 @@ arr = matchtimeout 1, "arrow"
 
 x = 0
 
-put "stance parry"
+put "stance shield"
 pause 1
 put "put clay in my back"
 pause 2
 put "put flail in my back"
 pause 2
+put "rem hau"
+pause 6
+put "put hau in my back"
+pause 2
+put "get leathers from my back"
+pause 2
+put "wear leathers"
+pause 6
 put "rem sling"
 pause 2
 put "prep stw 35"
